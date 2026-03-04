@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Satoshi', sans-serif;
+  --font-heading: 'Satoshi', sans-serif;
+
+  /* Muted Peach & Navy (Friendly / Editorial) */
+  --color-bg: #faf4f0;
+  --color-surface: #fffcf9;
+  --color-border: #e8ded6;
+
+  --color-text: #0f1c3d;
+  --color-text-muted: #536287;
+  --color-text-subtle: #8996b5;
+
+  --color-accent: #f4564a;
+  --color-accent-muted: rgba(244, 86, 74, 0.1);
+  --color-accent-hover: #d93c30;
+
+  /* Override standard white to map to our deep navy text so everything is readable on the light background */
+  --color-white: #0f1c3d;
+}
+
+@utility tracking-tightest {
+  letter-spacing: -0.06em;
+}
+
+@utility tracking-tighter {
+  letter-spacing: -0.04em;
+}
+
+@utility tracking-widest {
+  letter-spacing: 0.15em;
+}
+
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Satoshi', var(--font-sans), sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Satoshi', var(--font-heading), sans-serif;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  /* Execution Modes */
+  .theme-focus {
+    /* Technical Blueprint */
+    --color-bg: #030d22;
+    --color-surface: #0a1936;
+    --color-border: #1a2a4b;
+    --color-text: #f0f4ff;
+    --color-text-muted: #8c9ebb;
+    --color-text-subtle: #4f648d;
+    --color-accent: #ff6b35;
+    --color-accent-muted: rgba(255, 107, 53, 0.1);
+    --color-accent-hover: #ff8c5f;
+    --color-white: #f0f4ff;
+  }
+
+  .theme-overclock {
+    /* Thermal Vision */
+    --color-bg: #050505;
+    --color-surface: #111111;
+    --color-border: #222222;
+    --color-text: #e0e0e0;
+    --color-text-muted: #888888;
+    --color-text-subtle: #555555;
+    --color-accent: #39ff14;
+    --color-accent-muted: rgba(57, 255, 20, 0.1);
+    --color-accent-hover: #81ff68;
+    --color-white: #ffffff;
+  }
+
+  .theme-raw {
+    /* Neo-Brutal Canvas */
+    --color-bg: #f8f9fa;
+    --color-surface: #ffffff;
+    --color-border: #e0e0e0;
+    --color-text: #111111;
+    --color-text-muted: #666666;
+    --color-text-subtle: #999999;
+    --color-accent: #ff66a3;
+    --color-accent-muted: rgba(255, 102, 163, 0.1);
+    --color-accent-hover: #ff99c2;
+    --color-white: #111111;
+  }
+}
+
+@layer components {
+
+  /* Consistent section wrapper */
+  .section-container {
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-container {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .section-container {
+      padding-left: 6rem;
+      padding-right: 6rem;
+    }
+  }
+
+  /* Structural Grid Background Overlay */
+  .bg-grid {
+    background-size: 40px 40px;
+    background-image:
+      linear-gradient(to right, var(--color-border) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
+  }
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-subtle);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (pointer: fine) {
+
+  body,
+  html,
+  *,
+  a,
+  button,
+  input {
+    cursor: none !important;
+  }
+}
