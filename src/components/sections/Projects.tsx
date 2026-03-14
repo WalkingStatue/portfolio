@@ -115,7 +115,7 @@ export default function Projects() {
                 >
                     <div>
                         <p className="text-xs font-medium tracking-[0.25em] uppercase text-[var(--color-accent)] mb-4">PROJECTS</p>
-                        <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter text-[var(--color-white)]">Things I've Built</h2>
+                        <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter text-[var(--color-white)]">Shipped Work</h2>
                     </div>
                     <span className="text-sm font-medium text-[var(--color-text-muted)] uppercase tracking-widest hidden md:block">
                         {projects.length} Selected Projects

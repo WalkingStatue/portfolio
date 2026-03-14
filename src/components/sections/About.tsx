@@ -21,7 +21,7 @@ export default function About() {
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                     className="text-2xl md:text-4xl lg:text-[42px] font-medium tracking-tight leading-[1.25] text-white max-w-[1000px] mb-16"
                 >
-                    <TextFillReveal text="Results-driven AI professional and full-stack developer with hands-on experience building GenAI-powered products for digital agencies. Currently working full-time at E2M Solutions." />
+                    <TextFillReveal text="I am a results-driven AI professional and full-stack developer specializing in creating custom GenAI tools for digital agencies. I lead teams to build automation systems that replace manual workflows." />
                 </motion.h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 mb-16">
@@ -32,10 +32,7 @@ export default function About() {
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         className="text-[15px] text-[var(--color-text-muted)] leading-[1.8]"
                     >
-                        I attend client discovery calls, extract requirements, and design execution plans.
-                        I build full-scale GenAI-enabled web applications using React, Node.js, and Supabase —
-                        deployed on Railway and Vercel. I've delivered an end-to-end AI Blog Generation platform
-                        with topic research, AI drafting, and RLHF feedback loops.
+                        Working full-time at E2M Solutions, I lead client discovery calls, extract core requirements, and design robust execution plans. I develop full-scale GenAI-enabled web applications using React, Node.js, and Supabase. One of my key deliveries includes an end-to-end AI Blog Generation platform that drastically reduced content production time for agency clients using RLHF feedback loops.
                     </motion.p>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -44,10 +41,7 @@ export default function About() {
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
                         className="text-[15px] text-[var(--color-text-muted)] leading-[1.8]"
                     >
-                        I design AI pipelines with careful attention to prompt engineering, model selection
-                        (proprietary vs. open-source), and knowing where AI adds value vs. where it doesn't.
-                        I also manage and mentor a team of interns — assigning tasks, tracking progress,
-                        and ensuring deliverables are collected before every client meeting.
+                        Beyond coding, I design AI pipelines focusing heavily on prompt engineering, optimal model selection, and identifying exactly where AI adds genuine value versus where it doesn't. I also manage and mentor a team of interns, ensuring our internal and client-facing deliverables are exceptional and delivered on time.
                     </motion.p>
                 </div>
 

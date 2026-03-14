@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import DynamicFontText from '../ui/DynamicFontText'
 import ScrambleText from '../ui/ScrambleText'
 
-const roles = ['AI Engineer', 'Full-Stack Developer', 'GenAI Builder', 'Automation Architect']
+const roles = ['AI Engineer', 'Full-Stack Developer', 'GenAI Architect', 'Automation Specialist']
 
 export default function Hero() {
     const ref = useRef<HTMLDivElement>(null)
@@ -43,9 +43,9 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-                    className="text-base md:text-lg text-[var(--color-text-muted)] max-w-[55ch] mx-auto leading-relaxed mb-12"
+                    className="text-base md:text-lg text-[var(--color-text-muted)] max-w-[65ch] mx-auto leading-relaxed mb-12"
                 >
-                    Building GenAI-powered products, automation pipelines, and production-grade web applications at E2M Solutions. Passionate about creating real-world AI solutions that save time and resources at scale.
+                    I design and build production-grade GenAI products, automation pipelines, and full-stack web applications at E2M Solutions. My focus is turning complex AI capabilities into real-world business solutions that save time and resources at scale.
                 </motion.p>
 
                 <motion.div
@@ -55,10 +55,10 @@ export default function Hero() {
                     className="flex flex-wrap gap-5 justify-center items-center"
                 >
                     <a href="#contact" className="inline-flex items-center justify-center px-10 py-4 bg-[var(--color-accent)] text-white text-sm font-semibold tracking-wide rounded-lg hover:bg-[var(--color-accent-hover)] transition-colors">
-                        GET IN TOUCH
+                        LET'S WORK TOGETHER
                     </a>
-                    <a href="#about" className="inline-flex items-center justify-center px-10 py-4 border border-[var(--color-border)] text-[var(--color-text-muted)] text-sm font-semibold tracking-wide rounded-lg hover:border-white/30 hover:text-white transition-all">
-                        EXPLORE
+                    <a href="#blog" className="inline-flex items-center justify-center px-10 py-4 border border-[var(--color-border)] text-[var(--color-text-muted)] text-sm font-semibold tracking-wide rounded-lg hover:border-white/30 hover:text-white transition-all">
+                        READ MY WRITING
                     </a>
                 </motion.div>
             </motion.div>

@@ -36,7 +36,7 @@ export default function Footer() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="text-base text-[var(--color-text-muted)] max-w-[50ch] mx-auto mb-10 leading-relaxed"
                     >
-                        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                        Looking for an AI engineer to automate workflows, build custom GenAI tools, or lead full-stack development? I'm currently open for new opportunities.
                     </motion.p>
 
                     <motion.div
