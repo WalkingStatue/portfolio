@@ -15,13 +15,19 @@ import { Analytics } from '@vercel/analytics/react'
 export default function App() {
   return (
     <div className="relative min-h-screen bg-[var(--color-bg)] text-[var(--color-text)] selection:bg-[var(--color-accent)] selection:text-[var(--color-bg)] font-[var(--font-sans)]">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-[100] px-4 py-2 bg-[var(--color-accent)] text-white rounded-md font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+      >
+        Skip to content
+      </a>
       <NoiseGrain />
       <Preloader />
       <CustomCursor />
       <div className="fixed inset-0 pointer-events-none z-0 bg-grid opacity-[0.4]" style={{ maskImage: 'radial-gradient(circle at center, black, transparent 80%)', WebkitMaskImage: 'radial-gradient(circle at center, black, transparent 80%)' }} />
       <InteractiveGlow />
       <Nav />
-      <main className="relative z-10">
+      <main id="main-content" className="relative z-10">
         <Hero />
         <About />
         <Experience />
