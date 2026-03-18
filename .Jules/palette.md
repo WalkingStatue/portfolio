@@ -1,0 +1,3 @@
+## 2024-03-05 - ThemeSwitcher Menu Accessibility
+**Learning:** Found that custom dropdowns like `ThemeSwitcher` lack semantic relationships between the toggle button and the content menu. Without `aria-expanded`, `aria-haspopup`, and `role="menu"` / `role="menuitem"`, screen reader users have no context that clicking the toggle opens a list of options or which item is currently active.
+**Action:** Always ensure custom dropdown menus implement proper ARIA roles (`menu`, `menuitem`), state attributes (`aria-expanded`, `aria-haspopup="menu"` on the toggle), and clearly mark the active selection using `aria-current="true"`.
