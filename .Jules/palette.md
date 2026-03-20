@@ -1,0 +1,3 @@
+## 2025-03-05 - Fix Invalid HTML Nesting in Reusable Wrappers
+**Learning:** Wrapper components that default to returning a `<button>` can create severe accessibility issues (invalid HTML) when developers unknowingly pass `<a>` tags as children. Screen readers and keyboard navigation struggle with interactive elements nested inside other interactive elements.
+**Action:** When creating or modifying reusable interactive wrapper components (like `MagneticButton`), conditionally render the root element (e.g., return a fragment `<>{content}</>` if neither `href` nor `onClick` is provided) to avoid invalid HTML nesting such as `<a>` tags inside `<button>` elements.
