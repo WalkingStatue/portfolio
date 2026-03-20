@@ -20,7 +20,8 @@ export default function ThemeSwitcher() {
             setCurrentTheme(saved)
             const themeObj = themes.find(t => t.id === saved)
             if (themeObj && themeObj.class) {
-                document.documentElement.className = themeObj.class
+                document.documentElement.removeAttribute('class')
+                document.documentElement.classList.add(themeObj.class)
             }
         }
     }, [])
@@ -33,7 +34,7 @@ export default function ThemeSwitcher() {
         localStorage.setItem('theme-mode', themeId)
 
         // Clear classes and apply newly selected theme
-        document.documentElement.className = ''
+        document.documentElement.removeAttribute('class')
         if (themeObj.class) {
             document.documentElement.classList.add(themeObj.class)
         }
