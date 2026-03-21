@@ -54,9 +54,9 @@ export default function Nav() {
                 : 'bg-transparent'
                 }`}
         >
-            <div className="section-container py-6 px-8 md:px-12 lg:px-16 flex items-center justify-between">
-                <a href="#" className="text-sm font-semibold tracking-wide text-white">
-                    DHRUV&copy;
+            <div className="section-container py-4 md:py-5 px-8 md:px-12 lg:px-16 flex items-center justify-between">
+                <a href="#" className="flex items-center">
+                    <img src="/logo.png" alt="Dhruv Saija" className="h-14 md:h-20 lg:h-24 w-auto object-contain -my-4 md:-my-8" />
                 </a>
 
                 <nav className="hidden md:flex gap-8">
