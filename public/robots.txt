@@ -1,0 +1,5 @@
+# robots.txt for dhruvsaija.in
+User-agent: *
+Allow: /
+
+Sitemap: https://dhruvsaija.in/sitemap.xml
