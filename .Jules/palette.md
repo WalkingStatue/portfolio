@@ -1,0 +1,3 @@
+## 2024-05-17 - Avoid Invalid Nested Interactive Elements in Interactive Wrappers
+**Learning:** Wrapper components (like `MagneticButton` in this project) that default to rendering `<button>` elements can easily cause invalid HTML nesting and accessibility issues when their children are interactive elements like `<a>` tags.
+**Action:** When creating reusable interactive wrapper components, conditionally render the root element based on the provided props (e.g., return a fragment `<>{content}</>` if neither `href` nor `onClick` is provided) to avoid invalid HTML nesting such as `<a>` tags inside `<button>` elements.
