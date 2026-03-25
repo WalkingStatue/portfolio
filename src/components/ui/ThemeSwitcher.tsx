@@ -47,6 +47,7 @@ export default function ThemeSwitcher() {
                 onClick={() => setIsOpen(!isOpen)}
                 className="flex items-center justify-center w-8 h-8 rounded-full border border-[var(--color-border)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/5 hover:text-[var(--color-accent)] text-[var(--color-text-muted)] transition-colors"
                 aria-label="Toggle Execution Mode"
+                aria-expanded={isOpen}
             >
                 <Palette weight="bold" className="w-4 h-4" />
             </button>

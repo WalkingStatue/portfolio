@@ -1,0 +1,3 @@
+## 2024-05-18 - Interactive wrapper components rendering invalid HTML nesting
+**Learning:** Wrapper components (like `MagneticButton`) without an explicit `as` prop or strict conditionals often default to wrapping their children in a `<button>` element. If users pass an `<a>` tag as a child without providing an `onClick` or `href` prop to the wrapper itself, it results in invalid HTML (`<button><a>...</a></button>`). This causes accessibility issues and unpredictable browser behavior.
+**Action:** When creating or modifying reusable interactive wrapper components, ensure to conditionally render a Fragment (`<>{content}</>`) or a generic `<div>`/`<span>` if semantic props like `href` or `onClick` are missing, to prevent invalid HTML nesting.
