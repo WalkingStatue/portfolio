@@ -54,9 +54,5 @@ export default function MagneticButton({ children, className = '', href, onClick
         )
     }
 
-    if (onClick) {
-        return <button onClick={onClick} type="button">{content}</button>
-    }
-
-    return <>{content}</>
+    return <button onClick={onClick} type="button">{content}</button>
 }
