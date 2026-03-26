@@ -1,0 +1,3 @@
+## 2024-05-20 - [Accessible Theme Switcher and React Immutability]
+**Learning:** Found that modifying classes directly on `document.documentElement` (`document.documentElement.className = ''`) triggers a `react-hooks/immutability` lint error because it mutates global state outside of React's lifecycle in a way that ESLint flags. Furthermore, dropdowns built with Framer Motion often lack essential ARIA roles out of the box, making them opaque to screen readers.
+**Action:** When interacting with `document.documentElement`, prefer `setAttribute('class', value)` over directly modifying `className`. Always add `role="menu"`, `role="menuitem"`, `aria-haspopup`, and `aria-expanded` to custom animated dropdowns.
