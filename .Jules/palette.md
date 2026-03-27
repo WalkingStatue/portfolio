@@ -1,0 +1,3 @@
+## 2024-05-18 - Nested Interactive Elements in Reusable Wrappers
+**Learning:** A reusable button wrapper component (`MagneticButton`) was unconditionally wrapping its children with a `<button>` element. When used with child anchor tags (`<a>`), this created invalid nested interactive elements (`<button><a>...</a></button>`), breaking keyboard navigation and causing screen reader confusion.
+**Action:** When creating reusable interactive wrappers, always conditionally render the wrapper element (e.g., using a fragment `<>{content}</>` if neither `href` nor `onClick` is provided) to avoid nesting interactive tags.
