@@ -1,0 +1,3 @@
+## 2024-05-18 - Nested Interactive Elements in Wrappers
+**Learning:** In design-engineered projects heavily utilizing wrapper components (like `MagneticButton`), there is a high risk of invalid HTML nesting if the wrapper always renders an interactive root node (like `<button>`). Wrapping children that are already interactive elements (like `<a>`) breaks keyboard navigation, violates WCAG guidelines, and causes invalid DOM trees.
+**Action:** When creating reusable interactive physics/animation wrappers, conditionally render the root HTML element. If the wrapper itself does not receive interaction props (like `href` or `onClick`), it should return a React Fragment `<>{content}</>` instead of defaulting to a `<button>`.
