@@ -11,19 +11,17 @@ const themes = [
 
 export default function ThemeSwitcher() {
     const [isOpen, setIsOpen] = useState(false)
-    const [currentTheme, setCurrentTheme] = useState('default')
+    const [currentTheme, setCurrentTheme] = useState(() => {
+        return localStorage.getItem('theme-mode') || 'default'
+    })
 
-    // On mount, load saved theme or default
+    // On mount, apply the current theme to the DOM
     useEffect(() => {
-        const saved = localStorage.getItem('theme-mode')
-        if (saved) {
-            setCurrentTheme(saved)
-            const themeObj = themes.find(t => t.id === saved)
-            if (themeObj && themeObj.class) {
-                document.documentElement.className = themeObj.class
-            }
+        const themeObj = themes.find(t => t.id === currentTheme)
+        if (themeObj) {
+            document.documentElement.setAttribute('class', themeObj.class)
         }
-    }, [])
+    }, [currentTheme])
 
     const handleThemeChange = (themeId: string) => {
         const themeObj = themes.find(t => t.id === themeId)
@@ -32,11 +30,7 @@ export default function ThemeSwitcher() {
         setCurrentTheme(themeId)
         localStorage.setItem('theme-mode', themeId)
 
-        // Clear classes and apply newly selected theme
-        document.documentElement.className = ''
-        if (themeObj.class) {
-            document.documentElement.classList.add(themeObj.class)
-        }
+        // The useEffect will handle applying the class to the DOM
 
         setIsOpen(false)
     }
@@ -47,6 +41,8 @@ export default function ThemeSwitcher() {
                 onClick={() => setIsOpen(!isOpen)}
                 className="flex items-center justify-center w-8 h-8 rounded-full border border-[var(--color-border)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/5 hover:text-[var(--color-accent)] text-[var(--color-text-muted)] transition-colors"
                 aria-label="Toggle Execution Mode"
+                aria-expanded={isOpen}
+                aria-haspopup="menu"
             >
                 <Palette weight="bold" className="w-4 h-4" />
             </button>
@@ -54,19 +50,22 @@ export default function ThemeSwitcher() {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
+                        role="menu"
                         initial={{ opacity: 0, y: 10, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
                         className="absolute right-0 top-12 min-w-[140px] p-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)]/95 backdrop-blur-md shadow-2xl flex flex-col gap-1 z-[100]"
                     >
-                        <div className="px-3 py-2 border-b border-[var(--color-border)] mb-1">
+                        <div role="presentation" className="px-3 py-2 border-b border-[var(--color-border)] mb-1">
                             <span className="text-[10px] font-bold uppercase tracking-widest text-[var(--color-text-subtle)]">Select Mode</span>
                         </div>
                         {themes.map(t => (
                             <button
+                                role="menuitem"
                                 key={t.id}
                                 onClick={() => handleThemeChange(t.id)}
+                                aria-current={currentTheme === t.id ? 'true' : undefined}
                                 className={`text-left text-xs font-semibold tracking-wider uppercase px-3 py-2.5 rounded-md transition-colors ${currentTheme === t.id ? 'bg-[var(--color-accent)] text-[var(--color-bg)]' : 'text-[var(--color-text-muted)] hover:bg-[var(--color-surface)] hover:text-[var(--color-text)]'}`}
                             >
                                 {t.label}
