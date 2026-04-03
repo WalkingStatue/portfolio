@@ -1,0 +1,3 @@
+## 2026-04-03 - Proper ARIA roles in Animated Dropdowns
+**Learning:** Custom interactive dropdowns built with animation libraries (like Framer Motion's AnimatePresence) often lack the native accessibility semantics of standard HTML dropdowns, making them completely opaque to screen readers. Specifically, using just click handlers leaves users without context on what the popup contains.
+**Action:** When creating animated menus or dropdowns, strictly enforce adding `aria-haspopup="menu"` and `aria-expanded` on the trigger button, `role="menu"` on the container, `role="presentation"` on non-interactive sections, and `role="menuitem"` on the actionable items inside.
