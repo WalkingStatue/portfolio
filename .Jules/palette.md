@@ -1,0 +1,3 @@
+## 2024-05-24 - Animated Dropdown Accessibility
+**Learning:** Custom animated dropdown menus (like those built with Framer Motion) require manual semantic markup (`role="menu"`, `role="menuitem"`, `role="presentation"`, `aria-haspopup`, and `aria-expanded`) to be accessible to screen readers, unlike native `<select>` or dialog elements which handle this automatically. Non-interactive decorative elements within the menu must be marked with `role="presentation"`.
+**Action:** When creating custom animated dropdowns or menus with Framer Motion, always ensure semantic roles and ARIA attributes are explicitly added to both the trigger button and the menu items/container.
