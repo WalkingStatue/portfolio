@@ -1,0 +1,3 @@
+## 2024-04-09 - Accessible Framer Motion Dropdowns
+**Learning:** Custom animated dropdowns built with Framer Motion `AnimatePresence` often lack native semantic meaning. Without explicit ARIA roles (`role="menu"`, `role="menuitem"`), screen readers treat them as generic text nodes, making keyboard navigation and interaction confusing. The toggle button also needs `aria-haspopup="menu"` and `aria-expanded` to announce its state.
+**Action:** When building custom animated dropdowns, always add `role="menu"` to the container, `role="menuitem"` to clickable options, `role="presentation"` to non-interactive headers, and link the toggle button with `aria-haspopup` and `aria-expanded`.
