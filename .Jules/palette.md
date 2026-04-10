@@ -1,0 +1,3 @@
+## 2024-04-10 - Animated Menu ARIA Roles & React Hydration
+**Learning:** Custom animated dropdowns (like Framer Motion menus) require explicit `role="menu"`, `role="menuitem"`, and toggle attributes (`aria-haspopup`, `aria-expanded`) for screen reader access. Additionally, mutating `document.documentElement.className` directly causes React hydration and lint issues; `setAttribute("class", value)` is the safe, preferred alternative.
+**Action:** Always add proper ARIA menu roles to custom interactive dropdowns, and exclusively use `.setAttribute()` when modifying global HTML classes outside the React tree.
