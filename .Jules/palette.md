@@ -1,0 +1,3 @@
+## 2024-11-20 - Custom Animated Dropdown Accessibility
+**Learning:** Custom animated dropdown menus (like those built with Framer Motion) are completely invisible to screen readers as interactive menus unless explicitly given ARIA menu roles. The toggle button needs `aria-haspopup="menu"` and `aria-expanded`, the container needs `role="menu"`, the options need `role="menuitem"`, and any purely visual headers/separators need `role="presentation"`.
+**Action:** When building or reviewing custom dropdown components, always verify that these essential ARIA attributes are present to ensure they are perceivable and usable with screen readers.
