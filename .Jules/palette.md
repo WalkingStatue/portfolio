@@ -1,0 +1,3 @@
+## 2025-02-26 - Add ARIA Roles to Animated Dropdowns
+**Learning:** Custom animated dropdowns built with Framer Motion (like `ThemeSwitcher.tsx`) often lack the implicit accessibility semantics provided by native `<select>` or standard `<menu>` elements. Screen readers may not announce them correctly without explicit `role` definitions.
+**Action:** Always add `aria-haspopup="menu"` and `aria-expanded` to the trigger button, `role="menu"` to the animated wrapper `<motion.div>`, `role="presentation"` to non-interactive children (like headers), and `role="menuitem"` to all interactive options inside the dropdown map.
