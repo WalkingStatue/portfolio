@@ -1,0 +1,3 @@
+## 2026-04-20 - Add semantic roles to custom Framer Motion dropdowns
+**Learning:** Custom dropdown components built with Framer Motion (like the `ThemeSwitcher`) often lack the semantic HTML roles required for screen readers to interpret them correctly as menus, even if they have an `aria-label` on the toggle button.
+**Action:** When building custom animated dropdowns, always add `aria-expanded` and `aria-haspopup="menu"` to the toggle button. Add `role="menu"` to the dropdown container, `role="menuitem"` to the interactive options, and `role="presentation"` to any non-interactive structural elements within the menu.
