@@ -1,0 +1,3 @@
+## 2024-05-18 - Added ARIA attributes to Animated Dropdowns
+**Learning:** When building custom animated dropdowns with Framer Motion (or similar libraries), it's crucial to explicitly add `role="menu"`, `role="menuitem"`, `aria-haspopup="menu"`, and `aria-expanded={isOpen}` to ensure proper screen reader accessibility. Non-interactive elements within the menu, such as headers or separators, should receive `role="presentation"`.
+**Action:** Always include complete ARIA role structures and states when creating custom interactive components like dropdowns or modals, especially when they are visually hidden/shown through animation states rather than standard HTML elements.
