@@ -1,0 +1,3 @@
+## 2026-04-28 - Custom Animated Dropdown Accessibility
+**Learning:** When building custom animated dropdowns (e.g., with Framer Motion), screen readers often cannot interpret the interactive state or structure correctly without explicit roles.
+**Action:** Always add `role="menu"`, `role="menuitem"`, `aria-haspopup`, and `aria-expanded` to custom dropdowns to ensure proper screen reader accessibility. Non-interactive headers should receive `role="presentation"`.
