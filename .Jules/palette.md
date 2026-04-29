@@ -1,0 +1,3 @@
+## 2024-06-25 - Custom Animated Dropdown Accessibility
+**Learning:** Custom animated dropdowns built with framer-motion (like `ThemeSwitcher`) lack native ARIA attributes that would normally be present on `<select>` elements, causing them to be silent or confusing for screen reader users. Specifically, the menu container needs `role="menu"`, individual options need `role="menuitem"`, and the trigger button needs `aria-haspopup="menu"` and `aria-expanded`.
+**Action:** When creating or maintaining custom dropdown components with Framer Motion, always verify they implement the standard ARIA menu pattern. Add non-interactive element handling with `role="presentation"` to prevent screen readers from announcing unnecessary structural divs inside the menu.
