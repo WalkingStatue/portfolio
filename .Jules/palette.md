@@ -1,0 +1,3 @@
+## 2024-05-18 - Animated Custom Dropdown Menus
+**Learning:** When building custom animated dropdowns (e.g., with Framer Motion), screen readers are unaware of the expanding list unless proper ARIA roles are used. The structural elements of the component must be explicitly described using standard ARIA roles to simulate standard HTML select/dropdown behavior.
+**Action:** Always add `aria-haspopup="menu"` and `aria-expanded` to the toggle button. Add `role="menu"` to the dropdown container. Add `role="presentation"` to any non-interactive visual wrappers or header elements inside the menu. Ensure each selectable option receives `role="menuitem"`.
