@@ -1,0 +1,3 @@
+## 2025-05-03 - Accessible Dropdown Menu Pattern
+**Learning:** When building custom dropdown menus using Framer Motion or similar animation libraries, the resulting interactive container must be exposed properly to screen readers as a menu. Additionally, removing classes on the root element with `className = ""` instead of `setAttribute` can trigger `react-hooks/immutability` warnings.
+**Action:** Always add `role="menu"` to the dropdown container, `role="menuitem"` to its interactive children, and use `aria-expanded`/`aria-haspopup` on the trigger button. Use `document.documentElement.setAttribute("class", "...")` for root class manipulation to avoid linting errors.
