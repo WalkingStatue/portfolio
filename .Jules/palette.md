@@ -1,0 +1,3 @@
+## 2026-05-04 - Custom Dropdown Menu Accessibility
+**Learning:** When building custom animated dropdown menus (like ThemeSwitcher) using tools like Framer Motion, screen readers cannot interpret the `<div>` structure as a menu by default. Users relying on assistive technologies lose context on what the elements are and whether the menu is open or closed.
+**Action:** Always implement the ARIA menu pattern: add `aria-haspopup="true"`, `aria-expanded`, and `aria-controls` to the trigger button. Add `role="menu"` to the dropdown container and `role="menuitem"` to the options. Crucially, support the Escape key to close the menu for keyboard users.
