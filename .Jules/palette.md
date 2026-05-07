@@ -1,0 +1,3 @@
+## 2024-05-07 - Accessible Custom Dropdowns
+**Learning:** When building custom animated dropdown menus (like ThemeSwitcher), using standard structural HTML is often restricted by animation library requirements (e.g., `framer-motion` `motion.div`). Relying solely on `div`s and `button`s without ARIA leaves screen readers blind to the component`s true interactive nature as a menu.
+**Action:** Always manually apply the complete menu ARIA suite (`role="menu"`, `role="menuitem"`, `aria-haspopup`, `aria-expanded`) to custom dropdown components, ensure non-interactive elements inside the menu have `role="presentation"`, and implement `Escape` key handlers to match expected native select/menu UX patterns.
