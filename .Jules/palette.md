@@ -1,0 +1,3 @@
+## 2024-05-15 - Animated Dropdown ARIA Attributes and Keyboard Interaction
+**Learning:** For custom animated dropdown menus (like Framer Motion elements), `aria-haspopup="menu"`, `aria-expanded`, and `role="menu"` are critical for screen reader compatibility. Non-interactive headers inside menus should have `role="presentation"`, and inner buttons need `role="menuitem"`. Additionally, keyboard interaction (Escape key to close) is essential for full accessibility compliance.
+**Action:** Always ensure complete ARIA roles and Escape key event listeners are added whenever implementing a custom interactive dropdown or modal menu.
