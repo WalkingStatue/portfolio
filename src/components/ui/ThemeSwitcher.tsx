@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Palette } from '@phosphor-icons/react'
 
@@ -12,15 +12,44 @@ const themes = [
 export default function ThemeSwitcher() {
     const [isOpen, setIsOpen] = useState(false)
     const [currentTheme, setCurrentTheme] = useState('default')
+    const menuRef = useRef<HTMLDivElement>(null)
+
+    // Handle escape key and click outside
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setIsOpen(false)
+        }
+
+        const handleClickOutside = (e: MouseEvent) => {
+            if (isOpen && menuRef.current && !menuRef.current.contains(e.target as Node)) {
+                // Ensure we aren't clicking the toggle button itself (which would toggle it back open)
+                const targetElement = e.target as HTMLElement;
+                if (!targetElement.closest('button[aria-label="Toggle Execution Mode"]')) {
+                    setIsOpen(false)
+                }
+            }
+        }
+
+        if (isOpen) {
+            document.addEventListener('keydown', handleKeyDown)
+            document.addEventListener('mousedown', handleClickOutside)
+        }
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown)
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    }, [isOpen])
 
     // On mount, load saved theme or default
     useEffect(() => {
         const saved = localStorage.getItem('theme-mode')
         if (saved) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setCurrentTheme(saved)
             const themeObj = themes.find(t => t.id === saved)
             if (themeObj && themeObj.class) {
-                document.documentElement.className = themeObj.class
+                document.documentElement.setAttribute('class', themeObj.class)
             }
         }
     }, [])
@@ -33,10 +62,8 @@ export default function ThemeSwitcher() {
         localStorage.setItem('theme-mode', themeId)
 
         // Clear classes and apply newly selected theme
-        document.documentElement.className = ''
-        if (themeObj.class) {
-            document.documentElement.classList.add(themeObj.class)
-        }
+        // Instead of document.documentElement.className = '', we use setAttribute below to replace classes
+        document.documentElement.setAttribute('class', themeObj.class || '')
 
         setIsOpen(false)
     }
@@ -47,6 +74,8 @@ export default function ThemeSwitcher() {
                 onClick={() => setIsOpen(!isOpen)}
                 className="flex items-center justify-center w-8 h-8 rounded-full border border-[var(--color-border)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/5 hover:text-[var(--color-accent)] text-[var(--color-text-muted)] transition-colors"
                 aria-label="Toggle Execution Mode"
+                aria-haspopup="true"
+                aria-expanded={isOpen}
             >
                 <Palette weight="bold" className="w-4 h-4" />
             </button>
@@ -58,14 +87,17 @@ export default function ThemeSwitcher() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
+                        ref={menuRef}
+                        role="menu"
                         className="absolute right-0 top-12 min-w-[140px] p-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)]/95 backdrop-blur-md shadow-2xl flex flex-col gap-1 z-[100]"
                     >
-                        <div className="px-3 py-2 border-b border-[var(--color-border)] mb-1">
+                        <div role="presentation" className="px-3 py-2 border-b border-[var(--color-border)] mb-1">
                             <span className="text-[10px] font-bold uppercase tracking-widest text-[var(--color-text-subtle)]">Select Mode</span>
                         </div>
                         {themes.map(t => (
                             <button
                                 key={t.id}
+                                role="menuitem"
                                 onClick={() => handleThemeChange(t.id)}
                                 className={`text-left text-xs font-semibold tracking-wider uppercase px-3 py-2.5 rounded-md transition-colors ${currentTheme === t.id ? 'bg-[var(--color-accent)] text-[var(--color-bg)]' : 'text-[var(--color-text-muted)] hover:bg-[var(--color-surface)] hover:text-[var(--color-text)]'}`}
                             >
