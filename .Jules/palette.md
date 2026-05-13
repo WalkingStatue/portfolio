@@ -1,0 +1,3 @@
+## 2024-05-13 - [Theme Switcher Accessibility]
+**Learning:** When building custom animated dropdowns (e.g., with Framer Motion), screen readers need ARIA attributes (`role="menu"`, `role="menuitem"`, `aria-haspopup`, `aria-expanded`) to understand the component structure and state. Also, custom dropdowns require explicit keyboard event listeners (like the Escape key) to ensure they can be closed without relying solely on pointer events, which is crucial for keyboard users.
+**Action:** Always verify that custom interactive components mimicking native elements (like `<select>` or `<details>`) implement the expected keyboard navigation patterns and ARIA roles for their state.
