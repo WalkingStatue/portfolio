@@ -1,0 +1,3 @@
+## 2024-05-18 - Animated Menu Accessibility Learning
+**Learning:** Custom animated dropdown menus in this design system (using Framer Motion) require explicit ARIA role mapping (`menu`, `menuitem`, `presentation`) and manual event listeners for `Escape` key and click-outside behaviors. Without native elements, they are completely inaccessible to keyboard and screen reader users out-of-the-box.
+**Action:** Always verify that any custom interactive dropdown includes `useRef` for click-outside detection, keyboard event listeners for `Escape`, and the correct ARIA attributes before considering it complete.
