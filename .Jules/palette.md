@@ -1,0 +1,3 @@
+## 2024-11-20 - Custom Dropdown Accessibility and Keyboard Navigation
+**Learning:** Custom framer-motion dropdowns like `ThemeSwitcher` often lack essential screen-reader affordances (`role="menu"`, `aria-haspopup`, `aria-expanded`) and expected keyboard/mouse behaviors (closing via `Escape` or clicking outside) when they are built purely as animated `div` elements toggled by state.
+**Action:** When building custom animated dropdowns, always ensure `role="menu"`, `role="menuitem"`, `aria-haspopup`, and `aria-expanded` are set. Non-interactive elements within the menu should receive `role="presentation"`. The menu should support closing via the `Escape` key and clicking outside the component.
