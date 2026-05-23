@@ -1,0 +1,3 @@
+## 2024-05-23 - Custom Animated Dropdown Accessibility
+**Learning:** When building custom animated dropdowns (like ThemeSwitcher) with Framer Motion, it lacks native `select` accessibility out of the box. Screen readers won't know it's a menu or its open state without specific ARIA roles, and keyboard users can get trapped or confused if Escape/click-outside behaviors aren't manually wired up.
+**Action:** Always add `role="menu"`, `role="menuitem"`, `aria-haspopup="menu"`, and `aria-expanded` to custom dropdowns. Also, always implement a `useEffect` hook to handle closing the dropdown via the Escape key and outside clicks to match standard menu behavior.
