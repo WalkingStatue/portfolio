@@ -1,0 +1,3 @@
+## 2024-05-27 - Accessible Custom Animated Dropdowns
+**Learning:** When building custom animated dropdown menus (e.g., with Framer Motion), standard semantic HTML interactive behaviors and accessibility affordances are missing. Screen readers cannot detect the menu or its state without explicit roles and attributes, and users may be trapped if keyboard navigation (like Escape to close) is not implemented.
+**Action:** Always manually wire up `role="menu"`, `role="menuitem"`, `aria-haspopup`, and `aria-expanded`. Additionally, add keyboard event listeners (Escape key) and click-outside listeners to replicate native select/dropdown dismissal behavior.
