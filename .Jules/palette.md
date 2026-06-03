@@ -1,0 +1,3 @@
+## 2024-06-03 - Added keyboard navigation and ARIA roles to Theme Switcher Dropdown
+**Learning:** Custom interactive dropdowns in this application typically lack `aria-haspopup`, `aria-expanded`, `role="menu"`, and keyboard dismissal (Escape key/outside click), negatively impacting screen reader usability and keyboard navigation.
+**Action:** Always add ARIA roles (`menu`, `menuitem`, `presentation`) to custom built dropdowns (e.g. Framer Motion `motion.div`), bind `aria-expanded` to the toggle state, and ensure global event listeners handle the Escape key and click-outside for proper accessibility.
