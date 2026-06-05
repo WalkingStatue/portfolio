@@ -1,0 +1,3 @@
+## 2024-05-24 - [Accessible Framer Motion Dropdowns]
+**Learning:** When building custom animated dropdowns (e.g., with Framer Motion), screen readers and keyboard users often lose context. Simple structural tags (`<motion.div>`) lack native dropdown semantics.
+**Action:** Always add `role="menu"`, `role="menuitem"`, `aria-haspopup`, and `aria-expanded` to custom dropdowns. Non-interactive elements within the menu (like section headers) should receive `role="presentation"`. Implement a `useEffect` to support closing the menu via the Escape key and clicks outside the component, and apply `focus-visible` styles to all interactive elements to preserve keyboard navigation clarity.
