@@ -1,0 +1,3 @@
+## 2024-06-06 - Animated Dropdown Menu Accessibility
+**Learning:** Custom dropdown menus implemented with animation libraries like Framer Motion often lack native `<select>` semantic structure. Missing proper ARIA attributes (`aria-expanded`, `aria-haspopup`, `role="menu"`, `role="menuitem"`) and missing keyboard navigation (specifically Escape to close and clicking outside to dismiss) creates significant usability barriers for keyboard and screen reader users.
+**Action:** When building custom animated dropdowns, always add `role="menu"`, `role="menuitem"`, `aria-haspopup`, and `aria-expanded`. Ensure the component has a `useRef` and `useEffect` pattern to support closing via the Escape key and clicks outside the component boundary.
