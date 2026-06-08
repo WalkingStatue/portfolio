@@ -1,0 +1,3 @@
+## 2024-05-18 - Accessible Animated Dropdowns
+**Learning:** When building custom animated dropdowns (like the `ThemeSwitcher` with Framer Motion), users expect standard menu behavior such as closing on outside clicks or Escape key presses. Additionally, screen readers need explicit ARIA roles (`menu`, `menuitem`) and state attributes (`aria-expanded`, `aria-haspopup`) since custom `div` structures do not inherently carry these semantics.
+**Action:** Always add `useRef` to track outside clicks, listen for the Escape key, and explicitly define `role="menu"`, `role="menuitem"`, `aria-haspopup="menu"`, and `aria-expanded` for all custom animated dropdown menus to ensure full keyboard and screen reader accessibility.
