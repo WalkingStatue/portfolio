@@ -1,0 +1,3 @@
+## 2025-06-09 - Custom Animated Dropdown Accessibility
+**Learning:** Custom dropdown menus built with animation libraries (like Framer Motion) often lack native `<select>` semantic structure, making them invisible or confusing to screen readers and difficult to dismiss without a mouse.
+**Action:** When building custom interactive menus, always manually inject standard ARIA roles (`menu`, `menuitem`, `presentation`) alongside `aria-haspopup`/`aria-expanded` attributes. Crucially, always implement global event listeners for the `Escape` key and outside clicks to mirror native dropdown behavior and provide complete keyboard support.
