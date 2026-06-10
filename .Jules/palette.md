@@ -1,0 +1,3 @@
+## 2024-11-20 - Custom Animated Dropdown Accessibility
+**Learning:** When building custom animated dropdowns (like ThemeSwitcher) using Framer Motion, standard HTML select semantics are lost. These custom implementations require `useRef` and event listeners for proper click-outside/Escape key functionality, as well as explicit ARIA roles (`role="menu"`, `role="menuitem"`, `aria-haspopup`, `aria-expanded`) to be functional for screen reader users and keyboard navigation.
+**Action:** When implementing new custom dropdown components, explicitly add click-outside/Escape key logic and ensure ARIA markup is present. Verify that interactive children have `role="menuitem"` and non-interactive siblings have `role="presentation"`.
