@@ -1,0 +1,3 @@
+## 2026-06-14 - Accessible Custom Dropdown Menu
+**Learning:** When building custom animated dropdowns (e.g., with Framer Motion), users often expect them to behave like native `<select>` or `<menu>` elements. Missing ARIA roles make them invisible as menus to screen readers, and lacking "click outside" or "Escape" key support traps keyboard users or frustrates mouse users.
+**Action:** Always add `role="menu"`, `role="menuitem"`, `aria-haspopup`, and `aria-expanded` to custom dropdowns. Non-interactive elements within the menu should receive `role="presentation"`. Ensure the menu supports closing via the Escape key and clicks outside the component.
