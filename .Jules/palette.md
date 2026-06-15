@@ -1,0 +1,3 @@
+## 2024-06-15 - [Dropdown Keyboard Accessibility & ARIA]
+**Learning:** Custom Framer Motion dropdowns frequently lack native keyboard behavior (closing on `Escape` or outside click) and semantic ARIA roles, creating accessibility barriers for non-mouse users navigating theme switchers or similar menus.
+**Action:** Always wrap custom dropdown toggle buttons with `aria-expanded` and `aria-haspopup="true"`. Implement outside-click listeners via `useRef` and attach global `keydown` listeners for the `Escape` key. Use `role="menu"` on the list container and `role="menuitem"` for interactive children, leaving static headers as `role="presentation"`.
