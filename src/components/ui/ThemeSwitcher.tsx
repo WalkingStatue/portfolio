@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Palette } from '@phosphor-icons/react'
 
@@ -12,6 +12,8 @@ const themes = [
 export default function ThemeSwitcher() {
     const [isOpen, setIsOpen] = useState(false)
     const [currentTheme, setCurrentTheme] = useState('default')
+    const dropdownRef = useRef<HTMLDivElement>(null)
+    const buttonRef = useRef<HTMLButtonElement>(null)
 
     // On mount, load saved theme or default
     useEffect(() => {
@@ -25,6 +27,28 @@ export default function ThemeSwitcher() {
         }
     }, [])
 
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape' && isOpen) {
+                setIsOpen(false)
+            }
+        }
+
+        const handleClickOutside = (e: MouseEvent) => {
+            if (isOpen && dropdownRef.current && !dropdownRef.current.contains(e.target as Node) && !buttonRef.current?.contains(e.target as Node)) {
+                setIsOpen(false)
+            }
+        }
+
+        document.addEventListener('keydown', handleKeyDown)
+        document.addEventListener('mousedown', handleClickOutside)
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown)
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    }, [isOpen])
+
     const handleThemeChange = (themeId: string) => {
         const themeObj = themes.find(t => t.id === themeId)
         if (!themeObj) return
@@ -33,7 +57,7 @@ export default function ThemeSwitcher() {
         localStorage.setItem('theme-mode', themeId)
 
         // Clear classes and apply newly selected theme
-        document.documentElement.className = ''
+        document.documentElement.removeAttribute('class')
         if (themeObj.class) {
             document.documentElement.classList.add(themeObj.class)
         }
@@ -44,9 +68,12 @@ export default function ThemeSwitcher() {
     return (
         <div className="relative">
             <button
+                ref={buttonRef}
                 onClick={() => setIsOpen(!isOpen)}
                 className="flex items-center justify-center w-8 h-8 rounded-full border border-[var(--color-border)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/5 hover:text-[var(--color-accent)] text-[var(--color-text-muted)] transition-colors"
                 aria-label="Toggle Execution Mode"
+                aria-expanded={isOpen}
+                title="Toggle Execution Mode"
             >
                 <Palette weight="bold" className="w-4 h-4" />
             </button>
@@ -54,6 +81,7 @@ export default function ThemeSwitcher() {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
+                        ref={dropdownRef}
                         initial={{ opacity: 0, y: 10, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
