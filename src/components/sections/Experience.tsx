@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, MotionValue } from 'framer-motion'
 import { useRef } from 'react'
 
 interface Role {
@@ -11,17 +11,28 @@ interface Role {
 
 const roles: Role[] = [
     {
+        title: 'AI Engineer',
+        company: 'E2M Solutions',
+        type: 'Full-Time',
+        period: 'April 2026 — Present',
+        bullets: [
+            'Lead client-facing technical discussions, presenting strategic updates, project milestones, and actionable insights to stakeholders.',
+            'Spearhead end-to-end delivery of full-scale AI initiatives, autonomously managing the lifecycle from initial concept and architecture to deployment.',
+            'Provide ongoing technical leadership and architectural oversight for existing infrastructure, ensuring the scalability and reliability of internal automation processes.'
+        ]
+    },
+    {
         title: 'Associate AI Executor',
         company: 'E2M Solutions',
         type: 'Full-Time',
-        period: 'Sept 2025 — Present',
+        period: 'Sept 2025 — April 2026',
         bullets: [
-            'Attend client discovery calls, extract requirements, and design execution plans for the team.',
-            'Build full-scale GenAI-enabled web applications using React, Node.js, Supabase, deployed on Railway and Vercel.',
-            'Design AI pipelines with careful attention to prompt engineering, model selection (proprietary vs. open-source), and knowing where AI adds value vs. where it doesn\'t.',
-            'Delivered an end-to-end AI Blog Generation platform (topic research → draft → RLHF feedback loop), significantly reducing content production time for agency clients.',
-            'Built and shipped a Newsletter Generator, SEO Audit Tool, and internal process automation tools that replace manual workflows.',
-            'Manage and mentor a team of interns — assign tasks, track progress, and ensure deliverables are collected before every client meeting.',
+            'Facilitated client discovery sessions to gather technical requirements and architected comprehensive execution strategies for cross-functional teams.',
+            'Engineered and deployed production-ready, GenAI-enabled web applications utilizing React, Node.js, and Supabase across Railway and Vercel environments.',
+            'Architected robust AI pipelines, optimizing model selection (proprietary vs. open-source) and employing advanced prompt engineering to maximize business value.',
+            'Developed and launched an end-to-end AI Blog Generation platform incorporating an RLHF feedback loop, substantially accelerating content production lifecycles for agency clients.',
+            'Designed and shipped scalable automation solutions, including a Newsletter Generator and SEO Audit Tool, effectively replacing legacy manual workflows.',
+            'Directed and mentored a team of engineering interns, overseeing task delegation, tracking deliverables, and ensuring project milestones aligned with client expectations.'
         ],
     },
     {
@@ -30,11 +41,11 @@ const roles: Role[] = [
         type: 'Internship',
         period: 'June 2025 — Sept 2025',
         bullets: [
-            'Designed and built n8n automation workflows for internal and client-facing processes.',
-            'Developed and deployed custom micro-applications with React frontends and n8n as the automation backend, hosted on Railway and Vercel.',
-            'Applied prompt engineering and LLM evaluation practices to improve output quality across AI tools.',
-            'Wrote technical documentation for tools, workflows, and onboarding materials.',
-            'Evaluated and screened incoming intern candidates for technical fit and communication skills.',
+            'Engineered complex automation workflows using n8n to streamline internal operations and enhance client-facing service delivery.',
+            'Developed custom, cloud-hosted micro-applications integrating React frontends with n8n backend architectures on Railway and Vercel.',
+            'Implemented rigorous LLM evaluation frameworks and advanced prompt engineering techniques to elevate output quality across various AI integrations.',
+            'Authored comprehensive technical documentation, including system architectures, workflow guides, and standardized onboarding protocols.',
+            'Assisted in talent acquisition by evaluating and screening prospective intern candidates for technical proficiency and team fit.'
         ],
     },
 ]
@@ -92,7 +103,7 @@ export default function Experience() {
     )
 }
 
-function TimelineNode({ role, index, progress }: { role: Role, index: number, progress: any }) {
+function TimelineNode({ role, index, progress }: { role: Role, index: number, progress: MotionValue<number> }) {
     // Alternating layout for desktop: even index on left, odd on right
     const isEven = index % 2 === 0
 
