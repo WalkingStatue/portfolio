@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, MotionValue } from 'framer-motion'
 import { useRef } from 'react'
 
 interface Role {
@@ -11,10 +11,21 @@ interface Role {
 
 const roles: Role[] = [
     {
+        title: 'AI Engineer',
+        company: 'E2M Solutions',
+        type: 'Full-Time',
+        period: 'April 2026 — Present',
+        bullets: [
+            'Communicate directly with clients during meetings to present updates and project progress.',
+            'Autonomously manage and handle full-scale AI projects from conception to delivery.',
+            'Provide continued oversight and technical leadership for existing operations and internal automation processes.'
+        ]
+    },
+    {
         title: 'Associate AI Executor',
         company: 'E2M Solutions',
         type: 'Full-Time',
-        period: 'Sept 2025 — Present',
+        period: 'Sept 2025 — April 2026',
         bullets: [
             'Attend client discovery calls, extract requirements, and design execution plans for the team.',
             'Build full-scale GenAI-enabled web applications using React, Node.js, Supabase, deployed on Railway and Vercel.',
@@ -92,7 +103,7 @@ export default function Experience() {
     )
 }
 
-function TimelineNode({ role, index, progress }: { role: Role, index: number, progress: any }) {
+function TimelineNode({ role, index, progress }: { role: Role, index: number, progress: MotionValue<number> }) {
     // Alternating layout for desktop: even index on left, odd on right
     const isEven = index % 2 === 0
 
