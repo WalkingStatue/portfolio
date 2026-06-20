@@ -19,6 +19,7 @@ export default function ThemeSwitcher() {
     useEffect(() => {
         const saved = localStorage.getItem('theme-mode')
         if (saved) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setCurrentTheme(saved)
             const themeObj = themes.find(t => t.id === saved)
             if (themeObj && themeObj.class) {
@@ -73,6 +74,8 @@ export default function ThemeSwitcher() {
                 className="flex items-center justify-center w-8 h-8 rounded-full border border-[var(--color-border)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/5 hover:text-[var(--color-accent)] text-[var(--color-text-muted)] transition-colors"
                 aria-label="Toggle Execution Mode"
                 aria-expanded={isOpen}
+                aria-haspopup="menu"
+                aria-controls="theme-menu"
                 title="Toggle Execution Mode"
             >
                 <Palette weight="bold" className="w-4 h-4" />
@@ -81,6 +84,8 @@ export default function ThemeSwitcher() {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
+                        id="theme-menu"
+                        role="menu"
                         ref={dropdownRef}
                         initial={{ opacity: 0, y: 10, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -88,12 +93,13 @@ export default function ThemeSwitcher() {
                         transition={{ duration: 0.2 }}
                         className="absolute right-0 top-12 min-w-[140px] p-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)]/95 backdrop-blur-md shadow-2xl flex flex-col gap-1 z-[100]"
                     >
-                        <div className="px-3 py-2 border-b border-[var(--color-border)] mb-1">
+                        <div role="presentation" className="px-3 py-2 border-b border-[var(--color-border)] mb-1">
                             <span className="text-[10px] font-bold uppercase tracking-widest text-[var(--color-text-subtle)]">Select Mode</span>
                         </div>
                         {themes.map(t => (
                             <button
                                 key={t.id}
+                                role="menuitem"
                                 onClick={() => handleThemeChange(t.id)}
                                 className={`text-left text-xs font-semibold tracking-wider uppercase px-3 py-2.5 rounded-md transition-colors ${currentTheme === t.id ? 'bg-[var(--color-accent)] text-[var(--color-bg)]' : 'text-[var(--color-text-muted)] hover:bg-[var(--color-surface)] hover:text-[var(--color-text)]'}`}
                             >

@@ -1,0 +1,3 @@
+## 2024-05-20 - Theme Switcher Accessibility Pattern
+**Learning:** The custom ThemeSwitcher dropdown in Framer Motion was missing critical ARIA menu roles (`role="menu"`, `role="menuitem"`) and `aria-haspopup="true"` on the trigger, making it opaque to screen reader users trying to select a theme mode. It only had `aria-expanded` and an `aria-label`.
+**Action:** When building custom animated dropdowns (e.g., with Framer Motion), always add `role="menu"` to the dropdown container, `role="menuitem"` to the options, and `aria-haspopup="true"` with `aria-controls` to the trigger button to ensure proper screen reader accessibility.
