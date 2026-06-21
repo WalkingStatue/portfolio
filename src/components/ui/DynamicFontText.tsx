@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 
 const DEFAULT_FONTS = [
     "'Satoshi', sans-serif",          // Geometric sans — your base
@@ -23,15 +23,16 @@ export default function DynamicFontText({
     className = '',
     trigger = 'always',
 }: DynamicFontTextProps) {
-    const characters = text.split('')
+    const characters = React.useMemo(() => text.split(''), [text])
 
     const [charFonts, setCharFonts] = useState<number[]>(
         () => characters.map(() => 0)
     )
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setCharFonts(characters.map(() => 0))
-    }, [text])
+    }, [text, characters])
     const [isHovering, setIsHovering] = useState(false)
     const [isAnimating, setIsAnimating] = useState(trigger === 'always')
 
@@ -50,6 +51,7 @@ export default function DynamicFontText({
 
     useEffect(() => {
         if (trigger === 'hover') {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setIsAnimating(isHovering)
         }
     }, [isHovering, trigger])
@@ -57,6 +59,7 @@ export default function DynamicFontText({
     useEffect(() => {
         if (!isAnimating) {
             if (trigger === 'hover' && !isHovering) {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
                 setCharFonts(characters.map(() => 0))
             }
             return
