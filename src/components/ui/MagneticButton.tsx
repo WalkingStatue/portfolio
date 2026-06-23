@@ -47,12 +47,18 @@ export default function MagneticButton({ children, className = '', href, onClick
     )
 
     if (href) {
+        const isExternal = /^(https?:\/\/|\/\/)/i.test(href)
         return (
-            <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+            <a href={href} target={isExternal ? '_blank' : undefined} rel={isExternal ? 'noopener noreferrer' : undefined}>
                 {content}
             </a>
         )
     }
 
-    return <button onClick={onClick} type="button">{content}</button>
+    if (onClick) {
+        return <button onClick={onClick} type="button">{content}</button>
+    }
+
+    // Default: Just return the content wrapped in a fragment to avoid invalid HTML nesting
+    return <>{content}</>
 }
