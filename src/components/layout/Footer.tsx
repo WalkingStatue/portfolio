@@ -67,7 +67,6 @@ export default function Footer() {
                         <a href="mailto:saijadhruv8803@gmail.com" className="text-xs text-[var(--color-text-muted)] hover:text-white transition-colors uppercase tracking-wide">Email</a>
                         <a href="https://www.linkedin.com/in/saijadhruv/" target="_blank" rel="noopener noreferrer" className="text-xs text-[var(--color-text-muted)] hover:text-white transition-colors uppercase tracking-wide">LinkedIn</a>
                         <a href="https://github.com/WalkingStatue" target="_blank" rel="noopener noreferrer" className="text-xs text-[var(--color-text-muted)] hover:text-white transition-colors uppercase tracking-wide">GitHub</a>
-                        <span className="text-xs text-[var(--color-text-subtle)]">+91 7265802758</span>
                     </div>
                 </div>
             </div>
