@@ -1,0 +1,3 @@
+## 2024-06-29 - Missing ARIA attributes in custom Framer Motion dropdown menus
+**Learning:** When building custom dropdown menus or theme switchers using Framer Motion (like `AnimatePresence` and `motion.div`), native HTML menu accessibility is often lost. Screen readers won't announce the dropdown as a menu or its options as selectable items by default.
+**Action:** Always manually restore accessibility by adding `aria-haspopup="menu"` and `aria-controls` to the trigger button. Then, ensure the dropdown container has `role="menu"` and an appropriate `aria-label`, non-interactive headers have `role="presentation"`, and interactive options have `role="menuitem"` with `aria-current` or `aria-selected` tracking their state.
