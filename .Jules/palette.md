@@ -1,0 +1,3 @@
+## 2024-10-25 - Custom Framer Motion Dropdowns Need Explicit ARIA Menus
+**Learning:** Custom animated dropdowns using `motion.div` from Framer Motion do not provide native semantic meaning, preventing screen readers from identifying them as accessible menus. Just setting `aria-expanded` and `aria-label` on the trigger button is insufficient.
+**Action:** Always add `aria-haspopup="menu"` and `aria-controls="[menu-id]"` to the trigger button. Add `id="[menu-id]"` and `role="menu"` to the dropdown container. Add `role="menuitem"` to all interactive items inside the menu, and `role="presentation"` to any non-interactive elements (like dividers or headers) within the menu.
