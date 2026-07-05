@@ -1,0 +1,3 @@
+## 2024-07-05 - Custom Animated Dropdown Accessibility
+**Learning:** Custom animated dropdown menus (e.g., those built with Framer Motion) inherently lack semantic meaning for screen readers. While visual users perceive the `AnimatePresence` output as a menu, assistive technologies require explicit `role="menu"`, `role="menuitem"`, `aria-haspopup="menu"`, and `aria-expanded` attributes to properly announce the component and its interactive children. Non-interactive nested elements should receive `role="presentation"`.
+**Action:** Always verify that custom popovers and dropdowns include full WAI-ARIA menu semantics, rather than just relying on focus states and click events.
