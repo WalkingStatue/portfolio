@@ -1,0 +1,3 @@
+## 2026-07-06 - Framer Motion Custom Dropdown Accessibility
+**Learning:** When building custom animated dropdowns (e.g., with Framer Motion), the semantic structure of a menu is easily lost. Sighted users see a dropdown menu, but screen readers only see a collection of random `div` and `button` elements.
+**Action:** Always add `role="menu"` to the dropdown container, `role="menuitem"` to the options, and `aria-haspopup="menu"` along with `aria-expanded` and `aria-controls` to the toggle button. Apply `role="presentation"` to non-interactive header/divider elements to keep the accessibility tree clean. Ensure focus styles (`focus-visible`) are explicit since custom UI components often miss native keyboard styling.
