@@ -1,0 +1,3 @@
+## 2024-05-18 - Accessible Framer Motion Disclosure Pattern
+**Learning:** For simple custom dropdowns built with Framer Motion, strict `role="menu"` and `role="menuitem"` semantics can inadvertently break accessibility if complex arrow-key navigation is not implemented. Furthermore, missing `focus-visible` styles on interactive elements make keyboard navigation very difficult.
+**Action:** Use a standard disclosure pattern (with `aria-expanded`, `aria-controls`, and `aria-pressed`) instead of menu roles, and ensure explicit keyboard focus styles (`focus-visible:ring-2`) are consistently applied to all interactive elements within custom React components.
