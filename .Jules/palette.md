@@ -1,0 +1,3 @@
+## 2024-05-24 - Accessible Custom Dropdown Disclosure Patterns
+**Learning:** For custom dropdown menus built with motion libraries, standard disclosure patterns (using `aria-expanded`, `aria-controls`, and `aria-pressed` for selection states) provide better keyboard navigation support than strict `role="menu"` patterns when complex arrow-key navigation is absent. Explicit `focus-visible` states are critical as default focus styles are often overridden or invisible.
+**Action:** Always map toggle buttons to dropdown containers using `aria-controls`, utilize `aria-expanded` and `aria-pressed`, and explicitly add focus outline styles (e.g., `focus-visible:ring-2`) to all interactive elements.
