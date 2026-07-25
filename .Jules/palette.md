@@ -1,0 +1,3 @@
+## 2024-05-18 - Keyboard Focus and ARIA for Custom Dropdowns
+**Learning:** Custom Framer Motion dropdowns often rely purely on mouse events for visibility. Relying exclusively on Tab navigation without a clear `focus-visible` outline makes keyboard navigation impossible. Furthermore, for simple disclosure patterns, using standard `aria-expanded` and `aria-controls` is more robust and accessible than enforcing strict `role="menu"` semantics, which screen readers expect to have complex arrow-key navigation.
+**Action:** When building custom dropdowns, always implement explicit `focus-visible` classes on triggers and interactive children. Attach `aria-expanded` and `aria-controls` to the trigger, mapping `aria-controls` to the `id` of the dropdown container.
