@@ -1,0 +1,3 @@
+## 2024-07-28 - Focus States and Nested Interactions in Animation Wrappers
+**Learning:** Animation wrapper components (like `MagneticButton` from Framer Motion) often wrap their children in interactive tags (e.g., `<button>`). This can lead to invalid HTML nesting (like `<a>` inside `<button>`) and obscure native browser focus outlines, causing severe accessibility and keyboard navigation issues.
+**Action:** Always verify that routing props (like `href`) are passed to the root wrapper so it conditionally renders as the appropriate interactive element (`<a>` or `<button>`), while using `<span>` for the styled children. Explicit `focus-visible` utility classes must be added to these root interactive tags to ensure proper keyboard accessibility.
