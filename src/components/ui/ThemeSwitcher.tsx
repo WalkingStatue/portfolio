@@ -19,6 +19,7 @@ export default function ThemeSwitcher() {
     useEffect(() => {
         const saved = localStorage.getItem('theme-mode')
         if (saved) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setCurrentTheme(saved)
             const themeObj = themes.find(t => t.id === saved)
             if (themeObj && themeObj.class) {
@@ -70,9 +71,10 @@ export default function ThemeSwitcher() {
             <button
                 ref={buttonRef}
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center justify-center w-8 h-8 rounded-full border border-[var(--color-border)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/5 hover:text-[var(--color-accent)] text-[var(--color-text-muted)] transition-colors"
+                className="flex items-center justify-center w-8 h-8 rounded-full border border-[var(--color-border)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/5 hover:text-[var(--color-accent)] text-[var(--color-text-muted)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
                 aria-label="Toggle Execution Mode"
                 aria-expanded={isOpen}
+                aria-controls="theme-dropdown"
                 title="Toggle Execution Mode"
             >
                 <Palette weight="bold" className="w-4 h-4" />
@@ -81,6 +83,7 @@ export default function ThemeSwitcher() {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
+                        id="theme-dropdown"
                         ref={dropdownRef}
                         initial={{ opacity: 0, y: 10, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -95,7 +98,7 @@ export default function ThemeSwitcher() {
                             <button
                                 key={t.id}
                                 onClick={() => handleThemeChange(t.id)}
-                                className={`text-left text-xs font-semibold tracking-wider uppercase px-3 py-2.5 rounded-md transition-colors ${currentTheme === t.id ? 'bg-[var(--color-accent)] text-[var(--color-bg)]' : 'text-[var(--color-text-muted)] hover:bg-[var(--color-surface)] hover:text-[var(--color-text)]'}`}
+                                className={`text-left text-xs font-semibold tracking-wider uppercase px-3 py-2.5 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-inset ${currentTheme === t.id ? 'bg-[var(--color-accent)] text-[var(--color-bg)]' : 'text-[var(--color-text-muted)] hover:bg-[var(--color-surface)] hover:text-[var(--color-text)]'}`}
                             >
                                 {t.label}
                             </button>
