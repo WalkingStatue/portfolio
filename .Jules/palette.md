@@ -1,0 +1,3 @@
+## 2024-07-30 - Accessible Interactive Wrappers
+**Learning:** Custom animation wrappers (like MagneticButton) that internally render standard `<button>` elements can lead to invalid HTML and severe accessibility issues if they are used to wrap `<a>` tags. Furthermore, nested animation structures often obscure native browser focus outlines.
+**Action:** When building wrapper components that handle navigation, pass routing props directly to the wrapper so it conditionally renders as the appropriate root tag (e.g., `<a>` or `<button>`). Explicit `focus-visible` utility classes must be added to these root tags to guarantee keyboard accessibility.

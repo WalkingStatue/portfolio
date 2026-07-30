@@ -36,7 +36,7 @@ export default function MagneticButton({ children, className = '', href, onClick
     const content = (
         <motion.div
             ref={ref}
-            className={`inline-block cursor-pointer ${className}`}
+            className="inline-block cursor-pointer w-full h-full"
             style={{ x: springX, y: springY, rotateX, rotateY }}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
@@ -46,13 +46,29 @@ export default function MagneticButton({ children, className = '', href, onClick
         </motion.div>
     )
 
+    const baseWrapperClasses = `focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] rounded-lg ${className}`.trim();
+
     if (href) {
+        const isExternal = /^(https?:\/\/|\/\/)/i.test(href)
         return (
-            <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+            <a
+                href={href}
+                className={baseWrapperClasses}
+                target={isExternal ? '_blank' : undefined}
+                rel={isExternal ? 'noopener noreferrer' : undefined}
+            >
                 {content}
             </a>
         )
     }
 
-    return <button onClick={onClick} type="button">{content}</button>
+    return (
+        <button
+            className={baseWrapperClasses}
+            onClick={onClick}
+            type="button"
+        >
+            {content}
+        </button>
+    )
 }
