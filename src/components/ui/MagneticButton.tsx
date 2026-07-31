@@ -6,9 +6,10 @@ interface MagneticButtonProps {
     className?: string
     href?: string
     onClick?: () => void
+    'aria-label'?: string
 }
 
-export default function MagneticButton({ children, className = '', href, onClick }: MagneticButtonProps) {
+export default function MagneticButton({ children, className = '', href, onClick, 'aria-label': ariaLabel }: MagneticButtonProps) {
     const ref = useRef<HTMLDivElement>(null)
     const x = useMotionValue(0)
     const y = useMotionValue(0)
@@ -46,13 +47,31 @@ export default function MagneticButton({ children, className = '', href, onClick
         </motion.div>
     )
 
+    const rootClassName = "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent)] inline-block rounded-lg"
+
     if (href) {
+        const isExternal = /^(https?:\/\/|\/\/)/i.test(href)
         return (
-            <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+            <a
+                href={href}
+                target={isExternal ? '_blank' : undefined}
+                rel={isExternal ? 'noopener noreferrer' : undefined}
+                className={rootClassName}
+                aria-label={ariaLabel}
+            >
                 {content}
             </a>
         )
     }
 
-    return <button onClick={onClick} type="button">{content}</button>
+    return (
+        <button
+            onClick={onClick}
+            type="button"
+            className={rootClassName}
+            aria-label={ariaLabel}
+        >
+            {content}
+        </button>
+    )
 }

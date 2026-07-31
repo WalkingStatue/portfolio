@@ -1,0 +1,3 @@
+## 2023-10-27 - MagneticButton Accessibility
+**Learning:** Animated wrapper components (like Framer Motion wrappers) often break native focus outline visibility on interactive elements. Furthermore, nesting `<a>` inside `<button>` elements (or wrappers that default to rendering `<button>`) results in invalid HTML and breaks screen reader functionality.
+**Action:** Always map interactive props (`href`, `onClick`) down to the root interactive element (e.g., `<button>` or `<a>`) within the wrapper. When using animated containers, explicitly add keyboard focus utility classes (like `focus-visible`) to ensure navigation is perceivable.
