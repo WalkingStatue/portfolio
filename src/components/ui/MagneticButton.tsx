@@ -48,11 +48,11 @@ export default function MagneticButton({ children, className = '', href, onClick
 
     if (href) {
         return (
-            <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+            <a href={href} className="focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:outline-none rounded-lg block" target={/^(https?:\/\/|\/\/)/i.test(href) ? '_blank' : undefined} rel={/^(https?:\/\/|\/\/)/i.test(href) ? 'noopener noreferrer' : undefined}>
                 {content}
             </a>
         )
     }
 
-    return <button onClick={onClick} type="button">{content}</button>
+    return <button className="focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:outline-none rounded-lg block" onClick={onClick} type="button">{content}</button>
 }
