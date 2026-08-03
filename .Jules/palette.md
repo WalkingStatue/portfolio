@@ -1,0 +1,3 @@
+## 2024-05-24 - Accessibility issues in interactive motion wrappers
+**Learning:** Framer Motion wrappers (`<motion.div>`) acting as clickable elements or containing interactive elements often lose default browser keyboard focus outlines. Furthermore, relying on custom wrappers without passing routing props directly to the root element causes semantic issues (e.g. `<button><a>...</a></button>`).
+**Action:** Always ensure custom wrappers mapping to interactive elements apply explicit `focus-visible` utility classes, pass routing props to the root tag to avoid invalid HTML nesting, and leverage proper standard semantics for disclosures.
