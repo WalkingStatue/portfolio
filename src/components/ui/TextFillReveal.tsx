@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
+
 interface TextFillRevealProps {
     text: string
     className?: string
@@ -44,7 +45,7 @@ export default function TextFillReveal({
     )
 }
 
-function Word({ word, progress, range }: { word: string; progress: any; range: [number, number] }) {
+function Word({ word, progress, range }: { word: string; progress: import('framer-motion').MotionValue<number>; range: [number, number] }) {
     // Opacity goes from 0.2 (unfilled) to 1 (filled) as scroll passes its range
     const opacity = useTransform(progress, range, [0.2, 1])
 
