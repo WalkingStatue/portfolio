@@ -1,0 +1,3 @@
+## 2024-05-18 - Invalid nesting in animation wrappers and obscured focus states
+**Learning:** When using custom animation wrapper components (like `MagneticButton` or Framer Motion structures) that handle navigation or actions, nesting interactive HTML elements like an `<a>` inside a `<button>` creates invalid HTML semantics and accessibility issues. Additionally, nested animation structures can obscure native browser focus outlines, breaking keyboard navigation visibility.
+**Action:** Always pass routing props (like `href`) to the root wrapper so it conditionally renders as an `<a>` tag directly, using `<span>` for styling its children. Explicit `focus-visible` utility classes must be added to these root interactive tags to ensure keyboard accessibility.
