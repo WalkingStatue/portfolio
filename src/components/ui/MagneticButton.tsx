@@ -9,7 +9,7 @@ interface MagneticButtonProps {
 }
 
 export default function MagneticButton({ children, className = '', href, onClick }: MagneticButtonProps) {
-    const ref = useRef<HTMLDivElement>(null)
+    const ref = useRef<HTMLAnchorElement | HTMLButtonElement>(null)
     const x = useMotionValue(0)
     const y = useMotionValue(0)
 
@@ -33,26 +33,36 @@ export default function MagneticButton({ children, className = '', href, onClick
         y.set(0)
     }
 
-    const content = (
-        <motion.div
-            ref={ref}
-            className={`inline-block cursor-pointer ${className}`}
-            style={{ x: springX, y: springY, rotateX, rotateY }}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            whileTap={{ scale: 0.98 }}
-        >
-            {children}
-        </motion.div>
-    )
+    const commonProps = {
+        className: `inline-block cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] rounded-lg ${className}`,
+        style: { x: springX, y: springY, rotateX, rotateY },
+        onMouseMove: handleMouseMove,
+        onMouseLeave: handleMouseLeave,
+        whileTap: { scale: 0.98 }
+    }
 
     if (href) {
         return (
-            <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}>
-                {content}
-            </a>
+            <motion.a
+                ref={ref as React.RefObject<HTMLAnchorElement>}
+                href={href}
+                target={/^(https?:\/\/|\/\/)/i.test(href) ? '_blank' : undefined}
+                rel={/^(https?:\/\/|\/\/)/i.test(href) ? 'noopener noreferrer' : undefined}
+                {...commonProps}
+            >
+                {children}
+            </motion.a>
         )
     }
 
-    return <button onClick={onClick} type="button">{content}</button>
+    return (
+        <motion.button
+            ref={ref as React.RefObject<HTMLButtonElement>}
+            onClick={onClick}
+            type="button"
+            {...commonProps}
+        >
+            {children}
+        </motion.button>
+    )
 }
