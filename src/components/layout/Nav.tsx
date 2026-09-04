@@ -55,7 +55,7 @@ export default function Nav() {
                 }`}
         >
             <div className="section-container py-4 md:py-5 px-8 md:px-12 lg:px-16 flex items-center justify-between">
-                <a href="#" className="flex items-center">
+                <a href="#" className="flex items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] rounded-lg">
                     <img src="/logo.png" alt="Dhruv Saija" className="h-14 md:h-20 lg:h-24 w-auto object-contain -my-4 md:-my-8" />
                 </a>
 
@@ -64,7 +64,7 @@ export default function Nav() {
                         <a
                             key={link.href}
                             href={link.href}
-                            className="text-xs font-medium text-[var(--color-text-muted)] hover:text-white transition-colors duration-300 tracking-widest"
+                            className="text-xs font-medium text-[var(--color-text-muted)] hover:text-white transition-colors duration-300 tracking-widest focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] rounded-sm"
                         >
                             {link.label}
                         </a>
