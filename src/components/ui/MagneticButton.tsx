@@ -33,26 +33,39 @@ export default function MagneticButton({ children, className = '', href, onClick
         y.set(0)
     }
 
-    const content = (
-        <motion.div
-            ref={ref}
-            className={`inline-block cursor-pointer ${className}`}
+    const baseClassName = `inline-block cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] rounded-xl ${className}`
+    const isExternal = href ? /^(https?:\/\/|\/\/)/i.test(href) : false
+
+    if (href) {
+        return (
+            <motion.a
+                ref={ref as any} // eslint-disable-line @typescript-eslint/no-explicit-any
+                href={href}
+                target={isExternal ? '_blank' : undefined}
+                rel={isExternal ? 'noopener noreferrer' : undefined}
+                className={baseClassName}
+                style={{ x: springX, y: springY, rotateX, rotateY }}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                whileTap={{ scale: 0.98 }}
+            >
+                {children}
+            </motion.a>
+        )
+    }
+
+    return (
+        <motion.button
+            ref={ref as any} // eslint-disable-line @typescript-eslint/no-explicit-any
+            onClick={onClick}
+            type="button"
+            className={baseClassName}
             style={{ x: springX, y: springY, rotateX, rotateY }}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             whileTap={{ scale: 0.98 }}
         >
             {children}
-        </motion.div>
+        </motion.button>
     )
-
-    if (href) {
-        return (
-            <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}>
-                {content}
-            </a>
-        )
-    }
-
-    return <button onClick={onClick} type="button">{content}</button>
 }
