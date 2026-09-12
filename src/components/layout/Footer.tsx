@@ -64,9 +64,9 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-center border-t border-[var(--color-border)] py-8 gap-4">
                     <p className="text-xs text-[var(--color-text-subtle)]">&copy; {new Date().getFullYear()} Dhruv Saija. All rights reserved.</p>
                     <div className="flex items-center gap-6">
-                        <a href="mailto:saijadhruv8803@gmail.com" className="text-xs text-[var(--color-text-muted)] hover:text-white transition-colors uppercase tracking-wide">Email</a>
-                        <a href="https://www.linkedin.com/in/saijadhruv/" target="_blank" rel="noopener noreferrer" className="text-xs text-[var(--color-text-muted)] hover:text-white transition-colors uppercase tracking-wide">LinkedIn</a>
-                        <a href="https://github.com/WalkingStatue" target="_blank" rel="noopener noreferrer" className="text-xs text-[var(--color-text-muted)] hover:text-white transition-colors uppercase tracking-wide">GitHub</a>
+                        <a href="mailto:saijadhruv8803@gmail.com" className="text-xs text-[var(--color-text-muted)] hover:text-white transition-colors uppercase tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] rounded-sm">Email</a>
+                        <a href="https://www.linkedin.com/in/saijadhruv/" target="_blank" rel="noopener noreferrer" className="text-xs text-[var(--color-text-muted)] hover:text-white transition-colors uppercase tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] rounded-sm">LinkedIn</a>
+                        <a href="https://github.com/WalkingStatue" target="_blank" rel="noopener noreferrer" className="text-xs text-[var(--color-text-muted)] hover:text-white transition-colors uppercase tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] rounded-sm">GitHub</a>
                         <span className="text-xs text-[var(--color-text-subtle)]">+91 7265802758</span>
                     </div>
                 </div>

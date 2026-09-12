@@ -54,10 +54,10 @@ export default function Hero() {
                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
                     className="flex flex-wrap gap-5 justify-center items-center"
                 >
-                    <a href="#contact" className="inline-flex items-center justify-center px-10 py-4 bg-[var(--color-accent)] text-white text-sm font-semibold tracking-wide rounded-lg hover:bg-[var(--color-accent-hover)] transition-colors">
+                    <a href="#contact" className="inline-flex items-center justify-center px-10 py-4 bg-[var(--color-accent)] text-white text-sm font-semibold tracking-wide rounded-lg hover:bg-[var(--color-accent-hover)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--color-bg)]">
                         GET IN TOUCH
                     </a>
-                    <a href="#about" className="inline-flex items-center justify-center px-10 py-4 border border-[var(--color-border)] text-[var(--color-text-muted)] text-sm font-semibold tracking-wide rounded-lg hover:border-white/30 hover:text-white transition-all">
+                    <a href="#about" className="inline-flex items-center justify-center px-10 py-4 border border-[var(--color-border)] text-[var(--color-text-muted)] text-sm font-semibold tracking-wide rounded-lg hover:border-white/30 hover:text-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--color-bg)]">
                         EXPLORE
                     </a>
                 </motion.div>

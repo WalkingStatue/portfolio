@@ -65,11 +65,11 @@ export default function Contact() {
                     transition={{ delay: 0.5 }}
                     className="flex flex-col sm:flex-row gap-8 justify-center items-center text-sm text-[var(--color-text-subtle)]"
                 >
-                    <a href="mailto:saijadhruv8803@gmail.com" className="flex items-center gap-2 hover:text-[var(--color-accent)] transition-colors cursor-pointer">
+                    <a href="mailto:saijadhruv8803@gmail.com" className="flex items-center gap-2 hover:text-[var(--color-accent)] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--color-bg)] rounded-sm">
                         <EnvelopeSimple size={16} weight="light" />
                         saijadhruv8803@gmail.com
                     </a>
-                    <a href="tel:+917265802758" className="flex items-center gap-2 hover:text-[var(--color-accent)] transition-colors cursor-pointer">
+                    <a href="tel:+917265802758" className="flex items-center gap-2 hover:text-[var(--color-accent)] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--color-bg)] rounded-sm">
                         <Phone size={16} weight="light" />
                         +91 7265802758
                     </a>

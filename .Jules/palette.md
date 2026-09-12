@@ -1,0 +1,3 @@
+## 2024-09-12 - Added Keyboard Focus Outlines to Interactive Elements
+**Learning:** The application heavily uses custom `a` and `button` styling with `framer-motion` wrappers, which override browser default focus outlines, making keyboard navigation inaccessible. The MagneticButton wrapper also obscured interactive states when elements inside it weren't styled with explicit focus markers.
+**Action:** Replaced browser-default focus behavior with explicit Tailwind `focus-visible:ring-2` utilities on all core navigation links, buttons, theme switcher dropdowns, and social links to guarantee clear visual indicators for keyboard users.
