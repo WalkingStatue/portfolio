@@ -64,7 +64,7 @@ export default function Nav() {
                         <a
                             key={link.href}
                             href={link.href}
-                            className="text-xs font-medium text-[var(--color-text-muted)] hover:text-white transition-colors duration-300 tracking-widest"
+                            className="text-xs font-medium text-[var(--color-text-muted)] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] rounded-sm transition-colors duration-300 tracking-widest"
                         >
                             {link.label}
                         </a>

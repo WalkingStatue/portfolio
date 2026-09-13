@@ -30,8 +30,10 @@ export default function DynamicFontText({
     )
 
     useEffect(() => {
-        setCharFonts(characters.map(() => 0))
-    }, [text])
+
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+                setCharFonts(characters.map(() => 0))
+    }, [text, characters])
     const [isHovering, setIsHovering] = useState(false)
     const [isAnimating, setIsAnimating] = useState(trigger === 'always')
 
@@ -50,6 +52,7 @@ export default function DynamicFontText({
 
     useEffect(() => {
         if (trigger === 'hover') {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setIsAnimating(isHovering)
         }
     }, [isHovering, trigger])
@@ -57,6 +60,7 @@ export default function DynamicFontText({
     useEffect(() => {
         if (!isAnimating) {
             if (trigger === 'hover' && !isHovering) {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
                 setCharFonts(characters.map(() => 0))
             }
             return

@@ -1,0 +1,3 @@
+## 2024-05-24 - Interactive Elements Missing Keyboard Focus Indication
+**Learning:** Across the design system, custom interactive elements (like the ThemeSwitcher buttons, MagneticButtons, Nav Links, etc.) omit explicit focus styling. Relying on browser defaults with Framer Motion and custom class setups often obscures tab focus visibility, severely impacting keyboard navigation accessibility.
+**Action:** When working on interactive elements (buttons, links), explicitly implement `focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:outline-none` classes to ensure solid keyboard focus visibility, standardizing focus rings for the application.
