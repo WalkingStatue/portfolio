@@ -83,7 +83,7 @@ export default function ScrambleText({
             }
 
             // Let it scramble for a beat
-            let scrambleFrames = 8
+            const scrambleFrames = 8
             for (let f = 0; f < scrambleFrames; f++) {
                 if (!mounted.current) return
                 setDisplayText(scrambleFrame(len, visible, locked, targetText))

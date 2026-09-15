@@ -19,6 +19,7 @@ export default function ThemeSwitcher() {
     useEffect(() => {
         const saved = localStorage.getItem('theme-mode')
         if (saved) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setCurrentTheme(saved)
             const themeObj = themes.find(t => t.id === saved)
             if (themeObj && themeObj.class) {

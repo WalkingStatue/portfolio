@@ -22,10 +22,8 @@ export default function Footer() {
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         className="text-[12vw] md:text-[100px] font-bold uppercase tracking-tightest leading-[0.9] text-white mb-8 inline-block"
                     >
-                        <MagneticButton>
-                            <a href="mailto:saijadhruv8803@gmail.com" className="hover:text-[var(--color-accent)] transition-colors duration-500 cursor-pointer inline-block mt-4 md:mt-0">
-                                LET'S TALK
-                            </a>
+                        <MagneticButton href="mailto:saijadhruv8803@gmail.com" className="hover:text-[var(--color-accent)] transition-colors duration-500 cursor-pointer inline-block mt-4 md:mt-0">
+                            <span>LET'S TALK</span>
                         </MagneticButton>
                     </motion.h2>
 
@@ -46,15 +44,11 @@ export default function Footer() {
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="flex flex-wrap gap-4 justify-center"
                     >
-                        <MagneticButton>
-                            <a href="mailto:saijadhruv8803@gmail.com" className="px-8 py-3.5 bg-[var(--color-accent)] text-white text-sm font-semibold tracking-wide rounded-lg hover:bg-[var(--color-accent-hover)] transition-colors block">
-                                SEND EMAIL
-                            </a>
+                        <MagneticButton href="mailto:saijadhruv8803@gmail.com" className="px-8 py-3.5 bg-[var(--color-accent)] text-white text-sm font-semibold tracking-wide rounded-lg hover:bg-[var(--color-accent-hover)] transition-colors block">
+                            <span>SEND EMAIL</span>
                         </MagneticButton>
-                        <MagneticButton>
-                            <a href="https://www.linkedin.com/in/saijadhruv/" target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 border border-[var(--color-border)] text-[var(--color-text-muted)] text-sm font-semibold tracking-wide rounded-lg hover:border-[var(--color-text)] hover:text-[var(--color-text)] transition-all block">
-                                LINKEDIN
-                            </a>
+                        <MagneticButton href="https://www.linkedin.com/in/saijadhruv/" className="px-8 py-3.5 border border-[var(--color-border)] text-[var(--color-text-muted)] text-sm font-semibold tracking-wide rounded-lg hover:border-[var(--color-text)] hover:text-[var(--color-text)] transition-all block">
+                            <span>LINKEDIN</span>
                         </MagneticButton>
                     </motion.div>
                 </div>
