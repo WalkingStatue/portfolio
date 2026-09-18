@@ -9,7 +9,7 @@ interface MagneticButtonProps {
 }
 
 export default function MagneticButton({ children, className = '', href, onClick }: MagneticButtonProps) {
-    const ref = useRef<HTMLDivElement>(null)
+    const ref = useRef<HTMLAnchorElement & HTMLButtonElement>(null)
     const x = useMotionValue(0)
     const y = useMotionValue(0)
 
@@ -33,26 +33,39 @@ export default function MagneticButton({ children, className = '', href, onClick
         y.set(0)
     }
 
-    const content = (
-        <motion.div
+    const isExternal = href ? /^(https?:\/\/|\/\/)/i.test(href) : false;
+    const baseClasses = `inline-block cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] focus-visible:ring-[var(--color-accent)] rounded-lg ${className}`;
+
+    if (href) {
+        return (
+            <motion.a
+                ref={ref}
+                href={href}
+                target={isExternal ? '_blank' : undefined}
+                rel={isExternal ? 'noopener noreferrer' : undefined}
+                className={baseClasses}
+                style={{ x: springX, y: springY, rotateX, rotateY }}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                whileTap={{ scale: 0.98 }}
+            >
+                {children}
+            </motion.a>
+        )
+    }
+
+    return (
+        <motion.button
             ref={ref}
-            className={`inline-block cursor-pointer ${className}`}
+            type="button"
+            onClick={onClick}
+            className={baseClasses}
             style={{ x: springX, y: springY, rotateX, rotateY }}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             whileTap={{ scale: 0.98 }}
         >
             {children}
-        </motion.div>
+        </motion.button>
     )
-
-    if (href) {
-        return (
-            <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}>
-                {content}
-            </a>
-        )
-    }
-
-    return <button onClick={onClick} type="button">{content}</button>
 }

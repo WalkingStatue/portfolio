@@ -1,0 +1,3 @@
+## 2023-10-27 - Custom Animation Wrappers and Focus Outlines
+**Learning:** Custom animation wrappers (like Framer Motion's `<motion.div>`) obscure native browser focus outlines when wrapping interactive elements like `<button>` or `<a>`. This makes keyboard navigation inaccessible.
+**Action:** Always render the semantic root tag directly (e.g. `<motion.button>` or `<motion.a>`) instead of wrapping standard interactive elements in animated divs. Apply explicit `focus-visible` utility classes to these root elements to ensure keyboard accessibility is maintained despite the animation library's behavior.
