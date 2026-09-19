@@ -1,0 +1,4 @@
+## 2024-05-24 - Accessibility improvements for Interactive Wrappers
+
+**Learning:** Custom interactive wrappers (like `MagneticButton` and `ThemeSwitcher`) often obscure native browser focus outlines. Moreover, passing <a> tags as children to these wrappers when they fall back to rendering <button> tags leads to nested interactive elements, which is an accessibility anti-pattern.
+**Action:** When building or using custom wrapper components that handle navigation or actions, ensure the root interactive element (whether `<a>` or `<button>`) has explicit `focus-visible` utility classes (e.g. `focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-[var(--color-bg)]`). Additionally, refactor usage to pass routing props like `href` to the root wrapper directly rather than nesting <a> elements within the component.
