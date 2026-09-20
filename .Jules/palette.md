@@ -1,0 +1,3 @@
+## 2024-05-18 - Missing Focus Outlines on Animation Wrappers
+**Learning:** Custom interactive wrappers built with animation libraries (like Framer Motion's `motion.div`) often suppress native browser focus outlines, especially when wrapping nested interactive elements or when custom click handlers are applied without native `<a>` or `<button>` semantics at the very root of the interaction tree.
+**Action:** Always add explicit Tailwind `focus-visible` utility classes (e.g., `focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:outline-none`) to the outermost interactive element (anchor or button) returned by these custom wrapper components.
