@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import MagneticButton from '../ui/MagneticButton'
-import { EnvelopeSimple, Phone, LinkedinLogo } from '@phosphor-icons/react'
+import { EnvelopeSimple, LinkedinLogo } from '@phosphor-icons/react'
 
 export default function Contact() {
     const ref = useRef(null)
@@ -68,10 +68,6 @@ export default function Contact() {
                     <a href="mailto:saijadhruv8803@gmail.com" className="flex items-center gap-2 hover:text-[var(--color-accent)] transition-colors cursor-pointer">
                         <EnvelopeSimple size={16} weight="light" />
                         saijadhruv8803@gmail.com
-                    </a>
-                    <a href="tel:+917265802758" className="flex items-center gap-2 hover:text-[var(--color-accent)] transition-colors cursor-pointer">
-                        <Phone size={16} weight="light" />
-                        +91 7265802758
                     </a>
                 </motion.div>
             </div>
