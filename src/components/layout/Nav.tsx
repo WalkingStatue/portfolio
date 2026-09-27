@@ -55,8 +55,11 @@ export default function Nav() {
                 }`}
         >
             <div className="section-container py-4 md:py-5 px-8 md:px-12 lg:px-16 flex items-center justify-between">
-                <a href="#" className="flex items-center focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] rounded-lg">
-                    <img src="/logo.png" alt="Dhruv Saija" className="h-14 md:h-20 lg:h-24 w-auto object-contain -my-4 md:-my-8" />
+                <a href="#" aria-label="Dhruv Saija — back to top" className="group flex items-baseline gap-1.5 focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] rounded-lg">
+                    <span className="text-base md:text-lg font-bold uppercase tracking-tighter text-[var(--color-white)] group-hover:text-[var(--color-accent)] transition-colors duration-300">
+                        Dhruv Saija
+                    </span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] shrink-0" />
                 </a>
 
                 <nav className="hidden md:flex gap-8">

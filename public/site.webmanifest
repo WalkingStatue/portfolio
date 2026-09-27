@@ -1,11 +1,11 @@
 {
-  "name": "Dhruv Saija — AI Engineer & Full-Stack Developer",
+  "name": "Dhruv Saija — AI Engineer & GenAI Developer",
   "short_name": "Dhruv Saija",
-  "description": "AI Engineer & Full-Stack Developer. Building GenAI-powered products, automation pipelines, and production-grade web applications.",
+  "description": "AI Engineer building GenAI products — RAG platforms, LLM pipelines and automation that replaces manual work.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#faf4f0",
-  "theme_color": "#09090b",
+  "theme_color": "#faf4f0",
   "icons": [
     {
       "src": "/favicon/android-chrome-192x192.png",
