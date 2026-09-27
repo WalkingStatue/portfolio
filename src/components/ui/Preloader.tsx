@@ -25,6 +25,9 @@ export default function Preloader() {
 
     return (
         <motion.div
+            // Hook for the no-JS stylesheet in index.html: this overlay is pre-rendered, but
+            // without JS the progress timer never runs, so it would cover the page forever.
+            data-preloader
             initial={{ y: 0 }}
             animate={progress === 100 ? { y: '-100vh', opacity: 0 } : { y: 0 }}
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.4 }}

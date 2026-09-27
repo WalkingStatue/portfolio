@@ -1,9 +1,15 @@
 import { motion } from 'framer-motion'
 import VelocityMarquee from '../ui/VelocityMarquee'
 
-const row1 = ['Python', 'React', 'Node.js', 'GenAI APIs', 'Android Dev', 'Docker', 'Git', 'Tailwind', 'FastAPI', 'Redis', 'Vite']
-const row2 = ['JavaScript', 'TypeScript', 'Prompt Engineering', 'Supabase', 'Jetpack Compose', 'Vercel', 'PostgreSQL', 'LLM Evaluation', 'n8n', 'Django']
-const row3 = ['Java', 'C/C++', 'RAG Pipelines', 'Qdrant', 'Gemma', 'On-Device AI', 'Google ML Kit', 'Hugging Face', 'Railway', 'Alembic']
+// Grouped by band rather than shuffled, so each row reads as one kind of thing as it scrolls
+// past: what I do with models, what I build interfaces in, what runs underneath.
+//
+// Every entry is backed by shipped work — verified against the repositories themselves, not
+// aspirational. Deliberately omits table-stakes tooling (Git, editors, AI coding assistants):
+// listing what every candidate has dilutes the signal from what they don't.
+const row1 = ['GenAI APIs', 'RAG Pipelines', 'Prompt Engineering', 'LLM Evaluation', 'RLHF', 'Multi-LLM Orchestration', 'Model Inferencing', 'Vector Search', 'Qdrant', 'On-Device AI', 'Gemma', 'Google ML Kit', 'Hugging Face', 'OCR']
+const row2 = ['Python', 'TypeScript', 'JavaScript', 'Java', 'Kotlin', 'C/C++', 'React', 'React Native', 'Expo', 'Android', 'Room', 'Tailwind', 'Vite', 'Framer Motion']
+const row3 = ['Node.js', 'FastAPI', 'Django', 'SQLAlchemy', 'Alembic', 'Pydantic', 'PostgreSQL', 'SQLite', 'Supabase', 'Redis', 'WebSockets', 'Docker', 'n8n', 'pytest', 'Railway', 'Vercel']
 
 export default function Skills() {
     return (

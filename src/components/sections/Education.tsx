@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 export default function Education() {
     const education = [
-        { degree: 'Integrated MSc (CA & IT)', institution: 'KS School of Business Management and Information Technology', detail: 'Expected Graduation: 2026', gpa: '3.93 / 5.0' },
+        { degree: 'Integrated MSc (CA & IT)', institution: 'KS School of Business Management and Information Technology', detail: 'Graduated 2026', gpa: '3.93 / 5.0' },
         { degree: 'HSC', institution: 'Adani Vidhya Mandir, Ahmedabad', detail: '2021', gpa: '84.00%' },
         { degree: 'SSC', institution: 'Adani Vidhya Mandir, Ahmedabad', detail: '2019', gpa: '83.40%' },
     ]

@@ -1,10 +1,17 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import './index.css'
 import App from './App'
 
-createRoot(document.getElementById('root')!).render(
+const root = document.getElementById('root')!
+
+const app = (
   <StrictMode>
     <App />
-  </StrictMode>,
+  </StrictMode>
 )
+
+// `npm run build` pre-renders App into #root, so production has markup to adopt.
+// `vite dev` serves the empty shell from index.html, hence the client-render fallback.
+if (root.hasChildNodes()) hydrateRoot(root, app)
+else createRoot(root).render(app)

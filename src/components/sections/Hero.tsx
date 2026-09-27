@@ -45,7 +45,9 @@ export default function Hero() {
                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
                     className="text-base md:text-lg text-[var(--color-text-muted)] max-w-[55ch] mx-auto leading-relaxed mb-12"
                 >
-                    Building GenAI-powered products, automation pipelines, and production-grade web applications at E2M Solutions. Passionate about creating real-world AI solutions that save time and resources at scale.
+                    AI Engineer at E2M Solutions, Ahmedabad. I build GenAI products end to end — RAG platforms,
+                    LLM pipelines, and automation that removes the manual work nobody wanted to do. React, Node.js,
+                    Python, and whichever model actually earns its place.
                 </motion.p>
 
                 <motion.div

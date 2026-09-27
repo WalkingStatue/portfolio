@@ -12,6 +12,20 @@ interface Project {
 
 const projects: Project[] = [
     {
+        title: 'MoodPixels',
+        date: 'Sep 2026',
+        description: 'A private, offline mood journal for Android. Log how your day felt, watch a year fill with colour, and keep every entry on your own device. No account, no cloud, no ads.',
+        tags: ['Expo', 'React Native', 'SQLite', 'Android', 'Offline-First'],
+        link: 'https://moodpixels.dhruvsaija.in',
+    },
+    {
+        title: 'n8n HTML to Google Docs',
+        date: 'Feb 2026',
+        description: 'A published n8n community node that uploads HTML content straight into Google Docs with its formatting intact. Live on npm at v1.0.1 and installable into any n8n instance.',
+        tags: ['n8n', 'TypeScript', 'Google APIs', 'Open Source', 'npm'],
+        link: 'https://github.com/WalkingStatue/n8n-nodes-htmltogoogledocs',
+    },
+    {
         title: 'Multi-Bot RAG Platform',
         date: 'Apr 2025',
         description: 'Full-stack multi-bot assistant platform with advanced document-based knowledge retrieval (RAG), real-time WebSocket chat, multi-LLM support (GPT, Claude, Gemini), role-based access, and Redis-powered caching.',
