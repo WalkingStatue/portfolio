@@ -1,56 +1,35 @@
 # Dhruv Saija — Developer Portfolio
 
-A high-performance, design-engineered personal portfolio built with React, Vite, Tailwind CSS v4, and Framer Motion. 
+A React and TypeScript portfolio sharing the engineering notebook’s paper, olive, and lime palette. Serif headings, Satoshi body text, and a static orbital illustration frame the projects, writing, and experience.
 
-This project moves away from standard developer portfolio templates to focus on premium, editorial-grade aesthetics, physics-based interactions, and non-standard color palettes.
+## Running locally
 
-## Tech Stack
-
-- **Framework:** [React 19](https://react.dev/) + [Vite](https://vitejs.dev/) (TypeScript)
-- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
-- **Animation Engine:** [Framer Motion](https://www.framer.com/motion/)
-- **Icons:** [Phosphor Icons](https://phosphoricons.com/)
-
-## Key Built-In Features
-
-- **Physics-Based Interactions:** Elements like the Custom Cursor, Interactive Spotlight Glow, and Magnetic Footer Buttons use `framer-motion` springs (`useSpring`) for realistic inertia, damping, and magnetic tracking rather than basic CSS transitions.
-- **Dynamic Text Effects:** Custom components for scrambling text (`ScrambleText`) and continuously glitch-cycling through different geometric font families (`DynamicFontText`) on the main Hero.
-- **The "Execution Mode" Theme Switcher:** A globally injected CSS variable switching system (`ThemeSwitcher.tsx`) that cycles the entire site instantly between four distinct, high-impact aesthetic palettes:
-  - `Default`: Muted Peach & Navy (Editorial)
-  - `Focus`: The Technical Blueprint (Navy & Construction Orange)
-  - `Overclock`: Thermal Vision (Abyssal Black & Toxic Green)
-  - `Raw`: Neo-Brutal Canvas (Paper White, Ink, & Bubblegum Pink)
-- **Cinematic Overlays:** To break the "digital" feel, the site uses a global `<NoiseGrain />` SVG data-uri overlay (`mix-blend-multiply` with 4% opacity) and a structural engineering `<div className="bg-grid">` background to add physical texture and scale to the layouts.
-
-## Project Structure
-
-```text
-src/
-├── components/
-│   ├── layout/       # Core structural components (Nav, Footer)
-│   ├── sections/     # Main page content blocks (Hero, About, Projects, etc.)
-│   └── ui/           # Reusable interactive components (CustomCursor, ScrambleText, etc.)
-├── App.tsx           # Main application shell routing the sections
-├── index.css         # Tailwind v4 configuration, theme variables, and global overrides
-└── main.tsx          # React entry point
+```bash
+npm install
+npm run dev
 ```
 
-## Running Locally
+## Validation and production
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
+```bash
+npm run lint
+npm run build
+npm run preview
+```
 
-2. Start the Vite development server:
-   ```bash
-   npm run dev
-   ```
+The build runs TypeScript, Vite, and `scripts/prerender.tsx`. The generated page contains its content before JavaScript loads; `src/main.tsx` hydrates that markup in production. JavaScript and CSS target Safari 15, and responsive breakpoints use traditional min/max-width syntax.
 
-## Development & Aesthetics Notes
+## Content and design
 
-### Typography
-The site uses `Satoshi` as the base sans-serif font for body copy, and dynamically injects `Syne`, `Unbounded`, `Space Grotesk`, and `Archivo Black` during title glitch animations to represent a highly technical, robust brand identity. 
+- `src/portfolio-content.ts`: projects, roles, toolkit, education, and recognition.
+- `src/App.tsx`: page layout, navigation, contact links, and featured essay.
+- `src/index.css`: ordinary CSS, palette, typography, responsive layouts, and reduced-motion support.
+- `index.html`: SEO metadata, structured data, font loading, and GA4 configuration.
 
-### Tailwind v4 Configuration
-This project uses the new Vite-native Tailwind v4 `@theme` block injected directly into `index.css` rather than a separate `tailwind.config.js` file, enabling lightning-fast HMR and simplified theme variable mappings.
+The notebook links to https://blog.dhruvsaija.in. The featured writing card is maintained manually in `src/App.tsx`; update its title, description, cover, reading time, and links together when featuring a new essay.
+
+The previous components in `src/components/` remain available but are not mounted. Their Tailwind, Framer Motion, and icon dependencies are retained for now. The active page uses CSS transitions and mounts Vercel Analytics alongside the existing GA4 configuration.
+
+## Brand assets
+
+Run `node scripts/brand.mjs` to regenerate the olive-and-lime `ds.` favicons, home-screen icons, manifest, and 1200×630 social card. The blog uses the same generator with `--site blog` for its notebook card. `--output` can stage assets in another directory. Keep the shared palette in the generator aligned with `src/index.css`. The generated images are committed assets, separate from the build.

@@ -1,21 +1,25 @@
 {
-  "name": "Dhruv Saija — AI Engineer & GenAI Developer",
+  "id": "/",
+  "name": "Dhruv Saija — Portfolio",
   "short_name": "Dhruv Saija",
-  "description": "AI Engineer building GenAI products — RAG platforms, LLM pipelines and automation that replaces manual work.",
+  "description": "AI systems, useful software, and reliable automation by Dhruv Saija.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#faf4f0",
-  "theme_color": "#faf4f0",
+  "background_color": "#f7f7ef",
+  "theme_color": "#f7f7ef",
   "icons": [
     {
       "src": "/favicon/android-chrome-192x192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
       "src": "/favicon/android-chrome-512x512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ]
 }
