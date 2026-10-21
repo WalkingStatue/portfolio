@@ -76,7 +76,9 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-VCXJRPHM7S');
+    gtag('config', 'G-VCXJRPHM7S', {
+      linker: { domains: ['dhruvsaija.in', 'blog.dhruvsaija.in'] }
+    });
   </script>
 
   <!-- The portfolio is pre-rendered at build time and readable without JavaScript. -->
@@ -152,7 +154,7 @@
             "https://www.linkedin.com/in/saijadhruv/",
             "https://github.com/WalkingStatue"
           ],
-          "email": "saijadhruv8803@gmail.com",
+          "email": "dhruv@dhruvsaija.in",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Ahmedabad",
@@ -179,22 +181,6 @@
           "author": { "@id": "https://dhruvsaija.in/#person" },
           "isAccessibleForFree": true,
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
-        },
-        {
-          "@type": "SoftwareSourceCode",
-          "name": "Multi-Bot RAG Platform",
-          "description": "Multi-bot assistant platform with document-based knowledge retrieval (RAG), real-time WebSocket chat, multi-LLM support and role-based access.",
-          "codeRepository": "https://github.com/WalkingStatue/multi-rag-bot",
-          "programmingLanguage": ["Python", "TypeScript"],
-          "author": { "@id": "https://dhruvsaija.in/#person" }
-        },
-        {
-          "@type": "SoftwareSourceCode",
-          "name": "Memento",
-          "description": "Android screenshot manager running Google's Gemma embedding model on-device for semantic search, with OCR text extraction.",
-          "codeRepository": "https://github.com/WalkingStatue/Memento",
-          "programmingLanguage": "Java",
-          "author": { "@id": "https://dhruvsaija.in/#person" }
         }
       ]
     }

@@ -44,7 +44,7 @@ export default function Contact() {
                     transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.3 }}
                     className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
                 >
-                    <MagneticButton href="mailto:saijadhruv8803@gmail.com">
+                    <MagneticButton href="mailto:dhruv@dhruvsaija.in">
                         <span className="inline-flex items-center gap-2 bg-[var(--color-accent)] text-[var(--color-bg)] px-8 py-3.5 rounded-xl font-semibold text-sm tracking-wide hover:bg-[var(--color-accent-hover)] transition-colors duration-200">
                             <EnvelopeSimple size={18} weight="bold" />
                             Send Email
@@ -65,9 +65,9 @@ export default function Contact() {
                     transition={{ delay: 0.5 }}
                     className="flex flex-col sm:flex-row gap-8 justify-center items-center text-sm text-[var(--color-text-subtle)]"
                 >
-                    <a href="mailto:saijadhruv8803@gmail.com" className="flex items-center gap-2 hover:text-[var(--color-accent)] transition-colors cursor-pointer">
+                    <a href="mailto:dhruv@dhruvsaija.in" className="flex items-center gap-2 hover:text-[var(--color-accent)] transition-colors cursor-pointer">
                         <EnvelopeSimple size={16} weight="light" />
-                        saijadhruv8803@gmail.com
+                        dhruv@dhruvsaija.in
                     </a>
                 </motion.div>
             </div>
