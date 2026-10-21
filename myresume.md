@@ -1,6 +1,6 @@
 # Dhruv Saija
 
-Ahmedabad, Gujarat, India · (+91) 7265802758 · saijadhruv8803@gmail.com · [linkedin.com/in/saijadhruv](https://linkedin.com/in/saijadhruv) · [dhruvsaija.in](https://dhruvsaija.in)
+Ahmedabad, Gujarat, India · (+91) 7265802758 · dhruv@dhruvsaija.in · [linkedin.com/in/saijadhruv](https://linkedin.com/in/saijadhruv) · [dhruvsaija.in](https://dhruvsaija.in)
 
 ---
 
@@ -45,19 +45,19 @@ AI Engineer building GenAI products end to end — RAG platforms, LLM pipelines,
 ### MoodPixels *(Sept 2026)* — [moodpixels.dhruvsaija.in](https://moodpixels.dhruvsaija.in)
 Private, offline mood journal for Android. Log how a day felt, watch a year fill with colour, and keep every entry on-device. No account, no cloud, no ads. Built with Expo, React Native and SQLite.
 
-### n8n HTML to Google Docs *(Feb 2026)* — [npm](https://www.npmjs.com/package/n8n-nodes-htmltogoogledocs) · [github](https://github.com/WalkingStatue/n8n-nodes-htmltogoogledocs)
+### n8n HTML to Google Docs *(Feb 2026)* — [npm](https://www.npmjs.com/package/n8n-nodes-htmltogoogledocs)
 Published n8n community node (v1.0.1) that uploads HTML content into Google Docs with formatting preserved. Installable into any n8n instance. TypeScript, Google Docs/Drive APIs.
 
-### Multi-Bot RAG Platform *(April 2025)* — [github](https://github.com/WalkingStatue/multi-rag-bot)
+### Multi-Bot RAG Platform *(April 2025)*
 Full-stack multi-bot assistant platform with document-based knowledge retrieval (RAG), real-time WebSocket chat, multi-LLM support (GPT, Claude, Gemini), role-based access, and Redis-powered caching. React, FastAPI, PostgreSQL, Qdrant, Docker.
 
-### Memento *(Jan 2026)* — [github](https://github.com/WalkingStatue/Memento)
+### Memento *(Jan 2026)*
 Android screenshot manager that auto-detects screenshots, extracts text via OCR, and runs Google's Gemma embedding model locally on-device for semantic AI search — no cloud API required. Java, ML Kit, Supabase auth.
 
-### FinSmart *(April 2024)* — [github](https://github.com/WalkingStatue/finsmart)
+### FinSmart *(April 2024)*
 Personal finance management app built with Django and React. Account management, transaction tracking, budgeting, financial goals, dashboard visualisations, and data import/export.
 
-### Rescue Operation Simulator *(Dec 2024)* — [github](https://github.com/WalkingStatue/ros)
+### Rescue Operation Simulator *(Dec 2024)*
 Autonomous disaster rescue simulation using A* pathfinding. Agents navigate a customisable grid with dynamic terrain costs, obstacles and survivors, with real-time visualisation and a modular architecture. Python, Tkinter.
 
 ---

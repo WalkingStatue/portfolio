@@ -13,7 +13,6 @@ export const projects = [
     description:
       'A published n8n community node that uploads HTML content straight into Google Docs with its formatting intact. Live on npm at v1.0.1 and installable into any n8n instance.',
     tags: ['n8n', 'TypeScript', 'Google APIs', 'Open Source', 'npm'],
-    link: 'https://github.com/WalkingStatue/n8n-nodes-htmltogoogledocs',
   },
   {
     title: 'Multi-Bot RAG Platform',
@@ -21,7 +20,6 @@ export const projects = [
     description:
       'Full-stack multi-bot assistant platform with advanced document-based knowledge retrieval (RAG), real-time WebSocket chat, multi-LLM support (GPT, Claude, Gemini), role-based access, and Redis-powered caching.',
     tags: ['React', 'FastAPI', 'PostgreSQL', 'Qdrant', 'Redis', 'Docker'],
-    link: 'https://github.com/WalkingStatue/multi-rag-bot',
   },
   {
     title: 'Memento',
@@ -29,7 +27,6 @@ export const projects = [
     description:
       "Android screenshot manager that auto-detects screenshots, extracts text via OCR, and runs Google's Gemma embedding model locally on-device for semantic AI search — no cloud API needed. Built with Supabase auth.",
     tags: ['Android', 'Java', 'Gemma', 'On-Device AI', 'ML Kit', 'Supabase'],
-    link: 'https://github.com/WalkingStatue/Memento',
   },
   {
     title: 'FinSmart',
@@ -37,7 +34,6 @@ export const projects = [
     description:
       'Comprehensive personal finance management app built with Django and React. Features account management, transaction tracking, budgeting, financial goals, interactive dashboard visualisations, and data import/export.',
     tags: ['Python', 'Django', 'React', 'Full-Stack'],
-    link: 'https://github.com/WalkingStatue/finsmart',
   },
   {
     title: 'Rescue Operation Simulator',
@@ -45,7 +41,6 @@ export const projects = [
     description:
       'Autonomous disaster rescue simulation using A* pathfinding. Agents navigate a customisable grid with dynamic terrain costs, obstacles, and survivors. Features real-time visualisation and modular architecture.',
     tags: ['Python', 'Tkinter', 'A* Algorithm', 'AI Agents'],
-    link: 'https://github.com/WalkingStatue/ros',
   },
 ]
 

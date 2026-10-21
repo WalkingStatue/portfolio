@@ -2,6 +2,9 @@ import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 import './index.css'
 import App from './App'
+import { initializeAnalytics } from './analytics'
+
+initializeAnalytics()
 
 const root = document.getElementById('root')!
 

@@ -22,7 +22,7 @@ export default function Footer() {
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         className="text-[12vw] md:text-[100px] font-bold uppercase tracking-tightest leading-[0.9] text-white mb-8 inline-block"
                     >
-                        <MagneticButton href="mailto:saijadhruv8803@gmail.com">
+                        <MagneticButton href="mailto:dhruv@dhruvsaija.in">
                             <span className="hover:text-[var(--color-accent)] transition-colors duration-500 cursor-pointer inline-block mt-4 md:mt-0">
                                 LET'S TALK
                             </span>
@@ -46,7 +46,7 @@ export default function Footer() {
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="flex flex-wrap gap-4 justify-center"
                     >
-                        <MagneticButton href="mailto:saijadhruv8803@gmail.com">
+                        <MagneticButton href="mailto:dhruv@dhruvsaija.in">
                             <span className="px-8 py-3.5 bg-[var(--color-accent)] text-white text-sm font-semibold tracking-wide rounded-lg hover:bg-[var(--color-accent-hover)] transition-colors block">
                                 SEND EMAIL
                             </span>
@@ -64,7 +64,7 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-center border-t border-[var(--color-border)] py-8 gap-4">
                     <p className="text-xs text-[var(--color-text-subtle)]">&copy; {new Date().getFullYear()} Dhruv Saija. All rights reserved.</p>
                     <div className="flex items-center gap-6">
-                        <a href="mailto:saijadhruv8803@gmail.com" className="text-xs text-[var(--color-text-muted)] hover:text-white transition-colors uppercase tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] rounded-sm">Email</a>
+                        <a href="mailto:dhruv@dhruvsaija.in" className="text-xs text-[var(--color-text-muted)] hover:text-white transition-colors uppercase tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] rounded-sm">Email</a>
                         <a href="https://www.linkedin.com/in/saijadhruv/" target="_blank" rel="noopener noreferrer" className="text-xs text-[var(--color-text-muted)] hover:text-white transition-colors uppercase tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] rounded-sm">LinkedIn</a>
                         <a href="https://github.com/WalkingStatue" target="_blank" rel="noopener noreferrer" className="text-xs text-[var(--color-text-muted)] hover:text-white transition-colors uppercase tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] rounded-sm">GitHub</a>
                     </div>

@@ -97,7 +97,7 @@ export default function App() {
                 </a>
                 <a
                   className="button button-secondary"
-                  href="mailto:saijadhruv8803@gmail.com"
+                  href="mailto:dhruv@dhruvsaija.in"
                 >
                   Get in touch <Arrow />
                 </a>
@@ -159,7 +159,7 @@ export default function App() {
                     <Arrow />
                   </div>
                   <h3>
-                    <a href={project.link}>{project.title}</a>
+                    {project.link ? <a href={project.link}>{project.title}</a> : project.title}
                   </h3>
                   <p>{project.description}</p>
                   <ul className="tags" aria-label="Technologies">
@@ -167,12 +167,9 @@ export default function App() {
                       <li key={tag}>{tag}</li>
                     ))}
                   </ul>
-                  <a className="project-link" href={project.link}>
-                    {project.link.includes('github.com')
-                      ? 'View the repository'
-                      : 'Explore the project'}{' '}
-                    <Arrow />
-                  </a>
+                  {project.link && <a className="project-link" href={project.link}>
+                    Explore the project <Arrow />
+                  </a>}
                 </article>
               ))}
             </div>
@@ -372,7 +369,7 @@ export default function App() {
             <div className="actions">
               <a
                 className="button button-primary"
-                href="mailto:saijadhruv8803@gmail.com"
+                href="mailto:dhruv@dhruvsaija.in"
               >
                 Say hello <Arrow />
               </a>
@@ -396,7 +393,7 @@ export default function App() {
             <a href="https://github.com/WalkingStatue">
               GitHub <Arrow />
             </a>
-            <a href="mailto:saijadhruv8803@gmail.com">
+            <a href="mailto:dhruv@dhruvsaija.in">
               Email <Arrow />
             </a>
           </nav>
